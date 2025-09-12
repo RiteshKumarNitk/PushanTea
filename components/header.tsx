@@ -48,7 +48,7 @@ export function Header() {
                 transition={{ duration: 0.5 }}
                 className={`text-2xl font-bold transition-colors ${isScrolled ? "text-[#00492C]" : "text-[#00492C]"}`}
               >
-                VAHDAM®
+                PUSHAN®
               </motion.div>
               <div
                 className={`text-xs -mt-1 transition-colors ${isScrolled ? "text-[#00492C]/70" : "text-[#00492C]/70"}`}

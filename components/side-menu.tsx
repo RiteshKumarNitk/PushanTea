@@ -54,7 +54,7 @@ export function SideMenu({ isOpen, onClose }: SideMenuProps) {
               {/* Header */}
               <div className="flex items-center justify-between mb-8">
                 <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-[#00492C]">VAHDAM®</span>
+                  <span className="text-2xl font-bold text-[#00492C]">PUSHAN®</span>
                   <span className="text-sm text-[#00492C]/70">Feel Alive</span>
                 </div>
                 <Button variant="ghost" size="icon" onClick={onClose} className="text-gray-500 hover:text-gray-700">
@@ -104,7 +104,7 @@ export function SideMenu({ isOpen, onClose }: SideMenuProps) {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Get in Touch</h3>
                 <div className="space-y-3 text-sm text-gray-600">
                   <p>📞 +91-11-4084-5000</p>
-                  <p>✉️ hello@vahdam.com</p>
+                  <p>✉️ hello@PUSHAN.com</p>
                   <p>🕒 Mon-Fri: 9AM-6PM IST</p>
                 </div>
               </div>

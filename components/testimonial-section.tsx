@@ -11,7 +11,7 @@ const testimonials = [
     title: "Media Mogul & Philanthropist",
     image: "/oprah-winfrey-portrait.jpg",
     quote:
-      "VAHDAM Teas has become my go-to for premium quality teas. The freshness and flavor are unmatched, and I love supporting their direct-trade mission.",
+      "PUSHAN Teas has become my go-to for premium quality teas. The freshness and flavor are unmatched, and I love supporting their direct-trade mission.",
     featured: true,
   },
   {
@@ -20,7 +20,7 @@ const testimonials = [
     title: "Television Host & Comedian",
     image: "/ellen-degeneres-portrait.jpg",
     quote:
-      "I'm obsessed with VAHDAM's tea collection! The quality is exceptional and knowing that it supports tea growers directly makes every cup even more special.",
+      "I'm obsessed with PUSHAN's tea collection! The quality is exceptional and knowing that it supports tea growers directly makes every cup even more special.",
     featured: false,
   },
   {
@@ -29,7 +29,7 @@ const testimonials = [
     title: "Singer & Songwriter",
     image: "/mariah-carey-portrait.jpg",
     quote:
-      "VAHDAM Teas brings the authentic taste of India to my daily routine. The premium quality and ethical sourcing make it my favorite tea brand.",
+      "PUSHAN Teas brings the authentic taste of India to my daily routine. The premium quality and ethical sourcing make it my favorite tea brand.",
     featured: false,
   },
 ]
@@ -49,7 +49,7 @@ export function TestimonialSection() {
           <p className="text-sm uppercase tracking-wider text-muted-foreground mb-2">LOVED BY CELEBRITIES</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">What They're Saying</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-            Discover why celebrities and tea lovers worldwide choose VAHDAM for their daily tea ritual
+            Discover why celebrities and tea lovers worldwide choose PUSHAN for their daily tea ritual
           </p>
         </motion.div>
 

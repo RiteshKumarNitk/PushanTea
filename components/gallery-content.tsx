@@ -25,8 +25,8 @@ const galleryImages = [
   },
   {
     id: 3,
-    src: "/traditional-tea-ceremony-with-vahdam-teas.jpg",
-    alt: "Traditional tea ceremony with VAHDAM teas",
+    src: "/traditional-tea-ceremony-with-PUSHAN-teas.jpg",
+    alt: "Traditional tea ceremony with PUSHAN teas",
     category: "ceremony",
     title: "Tea Ceremony",
     description: "Experience the art of traditional tea brewing with our premium tea selections.",
@@ -138,7 +138,7 @@ export function GalleryContent() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Gallery</h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-              Discover the beauty behind our teas - from garden to cup, explore the journey of VAHDAM through stunning
+              Discover the beauty behind our teas - from garden to cup, explore the journey of PUSHAN through stunning
               visuals.
             </p>
           </motion.div>

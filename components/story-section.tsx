@@ -55,7 +55,7 @@ export function StorySection() {
 
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Founded in 2015 by Bala Sarda, VAHDAM Teas was born from a simple yet powerful vision: to make the
+                Founded in 2015 by Bala Sarda, PUSHAN Teas was born from a simple yet powerful vision: to make the
                 world's finest teas accessible globally while ensuring tea growers receive fair compensation for their
                 exceptional produce.
               </p>
@@ -93,14 +93,14 @@ export function StorySection() {
           >
             <div className="relative rounded-lg overflow-hidden">
               <img
-                src="/founder-bala-sarda-tea-garden.jpg"
-                alt="Bala Sarda, Founder of VAHDAM Teas in tea garden"
+                src="../public/assets/products/divineproduct.png"
+                alt="Bala Sarda, Founder of PUSHAN Teas in tea garden"
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               <div className="absolute bottom-6 left-6 text-white">
                 <h3 className="text-xl font-semibold mb-1">Bala Sarda</h3>
-                <p className="text-sm opacity-90">Founder & CEO, VAHDAM Teas</p>
+                <p className="text-sm opacity-90">Founder & CEO, PUSHAN Teas</p>
               </div>
             </div>
           </motion.div>
@@ -117,7 +117,7 @@ export function StorySection() {
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Our Core Values</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Every cup of VAHDAM tea represents our commitment to quality, sustainability, and social impact
+              Every cup of PUSHAN tea represents our commitment to quality, sustainability, and social impact
             </p>
           </div>
 

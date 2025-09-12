@@ -136,7 +136,7 @@ export function ProductSection() {
                   </div>
 
                   {/* Add to Cart Button */}
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" size="sm">
+                  <Button className="w-full bg-[#00492C] hover:bg-[#00492C]/90 text-primary-foreground" size="sm">
                     ADD TO CART
                   </Button>
                 </div>

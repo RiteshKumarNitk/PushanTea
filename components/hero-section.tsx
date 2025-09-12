@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 
+import bgVideo from "../public/assets/video/vvv.mp4";
+
 const statsData = [
   "Featured on the Ellen's Show",
   "6 Million Customers",
@@ -17,11 +19,29 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img
+        {/* <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-sBJy17Hsn9CrPuMwJ8AbpJd48coJbV.png"
           alt="Tea plantation workers in the mountains"
           className="w-full h-full object-cover"
-        />
+        /> */}
+        {/* <video
+            src={bgVideo}
+            controls
+            autoPlay
+            loop
+            muted
+            className="w-full h-full object-cover"
+          /> */}
+          <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        >
+          <source src="/assets/video/vvv.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center pt-16">
@@ -35,7 +55,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-[#00492C] font-serif"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-[#fff] font-serif"
           >
             India's Finest Teas
           </motion.h1>
@@ -44,7 +64,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl mb-8 text-[#00492C]/80 font-medium"
+            className="text-lg md:text-xl mb-8 text-[#fff]/80 font-medium"
           >
             Door Delivered Across India
           </motion.p>

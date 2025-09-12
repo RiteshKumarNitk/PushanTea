@@ -60,7 +60,7 @@ export function Footer() {
             className="lg:col-span-2"
           >
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-primary mb-2">VAHDAM</h2>
+              <h2 className="text-2xl font-bold text-primary mb-2">PUSHAN</h2>
               <p className="text-slate-300 leading-relaxed">
                 India's finest teas, delivered fresh from garden to cup. Experience the authentic taste of premium
                 Indian teas with our direct-trade promise.
@@ -78,7 +78,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-slate-300">hello@vahdam.com</span>
+                <span className="text-slate-300">hello@PUSHAN.com</span>
               </div>
             </div>
 
@@ -180,7 +180,7 @@ export function Footer() {
       <div className="border-t border-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-slate-400 text-sm">© 2024 VAHDAM Teas. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">© 2024 PUSHAN Teas. All rights reserved.</p>
             <div className="flex items-center gap-6 text-sm text-slate-400">
               <span>🇮🇳 Made in India</span>
               <span>🌱 Carbon Neutral Shipping</span>

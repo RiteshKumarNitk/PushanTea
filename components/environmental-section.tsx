@@ -167,7 +167,7 @@ export function EnvironmentalSection() {
         >
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Join Our Sustainability Journey</h3>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Every cup of VAHDAM tea you enjoy contributes to our environmental initiatives. Together, we can create a
+            Every cup of PUSHAN tea you enjoy contributes to our environmental initiatives. Together, we can create a
             more sustainable future for tea and our planet.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

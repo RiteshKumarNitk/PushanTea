@@ -39,7 +39,7 @@ export function AboutContent() {
   ]
 
   const milestones = [
-    { year: "2015", event: "VAHDAM founded by Bala Sarda" },
+    { year: "2015", event: "PUSHAN founded by Bala Sarda" },
     { year: "2016", event: "First international shipment to USA" },
     { year: "2018", event: "Featured in Oprah's Favorite Things" },
     { year: "2019", event: "Reached 1 million customers globally" },
@@ -60,7 +60,7 @@ export function AboutContent() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Story</h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-              From a small dream in India to serving millions of tea lovers worldwide, discover the journey of VAHDAM
+              From a small dream in India to serving millions of tea lovers worldwide, discover the journey of PUSHAN
               Teas.
             </p>
           </motion.div>
@@ -78,8 +78,8 @@ export function AboutContent() {
               viewport={{ once: true }}
             >
               <img
-                src="/bala-sarda-vahdam-founder-portrait.jpg"
-                alt="Bala Sarda - Founder of VAHDAM"
+                src="/bala-sarda-PUSHAN-founder-portrait.jpg"
+                alt="Bala Sarda - Founder of PUSHAN"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </motion.div>
@@ -91,7 +91,7 @@ export function AboutContent() {
             >
               <h2 className="text-3xl md:text-4xl font-bold text-[#00492C] mb-6">Meet Our Founder</h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Bala Sarda, a 4th generation tea entrepreneur, founded VAHDAM in 2015 with a revolutionary vision: to
+                Bala Sarda, a 4th generation tea entrepreneur, founded PUSHAN in 2015 with a revolutionary vision: to
                 make India's finest teas accessible to the world while ensuring freshness and quality at every step.
               </p>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
@@ -158,7 +158,7 @@ export function AboutContent() {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-[#00492C] mb-4">Our Journey</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Key milestones that shaped VAHDAM into the global tea brand it is today.
+              Key milestones that shaped PUSHAN into the global tea brand it is today.
             </p>
           </motion.div>
 
