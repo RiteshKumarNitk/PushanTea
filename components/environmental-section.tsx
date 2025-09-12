@@ -56,7 +56,7 @@ export function EnvironmentalSection() {
           viewport={{ once: true }}
           className="text-center max-w-4xl mx-auto mb-16"
         >
-          <p className="text-sm uppercase tracking-wider text-green-600 mb-2">SUSTAINABILITY</p>
+          <p className="text-sm uppercase tracking-wider text-[#00492C] mb-2">SUSTAINABILITY</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance">
             Brewing a Better Future for Our Planet
           </h2>
@@ -78,12 +78,12 @@ export function EnvironmentalSection() {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-4">Carbon Neutral by 2025</h3>
-              <p className="text-green-100 mb-6 leading-relaxed">
+              <p className="text-[#00492C]/10 mb-6 leading-relaxed">
                 We're on a mission to achieve complete carbon neutrality across our entire supply chain by 2025. From
                 farm to cup, every step of our process is being optimized for minimal environmental impact.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="bg-white text-green-700 hover:bg-green-50">
+                <Button variant="secondary" size="lg" className="bg-white text-[#00492C]/70 hover:bg-green-50">
                   View Our Progress
                 </Button>
                 <Button
@@ -98,19 +98,19 @@ export function EnvironmentalSection() {
             <div className="grid grid-cols-2 gap-4 text-center">
               <div className="bg-white/10 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-1">85%</div>
-                <p className="text-sm text-green-100">Carbon Reduction</p>
+                <p className="text-sm text-[#00492C]/10">Carbon Reduction</p>
               </div>
               <div className="bg-white/10 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-1">2025</div>
-                <p className="text-sm text-green-100">Net Zero Target</p>
+                <p className="text-sm text-[#00492C]/10">Net Zero Target</p>
               </div>
               <div className="bg-white/10 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-1">100%</div>
-                <p className="text-sm text-green-100">Renewable Energy</p>
+                <p className="text-sm text-[#00492C]/10">Renewable Energy</p>
               </div>
               <div className="bg-white/10 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-1">50K+</div>
-                <p className="text-sm text-green-100">Trees Planted</p>
+                <p className="text-sm text-[#00492C]/10">Trees Planted</p>
               </div>
             </div>
           </div>
@@ -143,11 +143,11 @@ export function EnvironmentalSection() {
                 <Card className="p-6 h-full bg-card border border-border hover:shadow-lg transition-all duration-300 group">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 transition-colors">
-                      <initiative.icon className="w-6 h-6 text-green-600" />
+                      <initiative.icon className="w-6 h-6 text-[#00492C]" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-card-foreground mb-2">{initiative.title}</h4>
-                      <div className="text-sm font-medium text-green-600 mb-2">{initiative.metric}</div>
+                      <div className="text-sm font-medium text-[#00492C] mb-2">{initiative.metric}</div>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{initiative.description}</p>
@@ -171,7 +171,7 @@ export function EnvironmentalSection() {
             more sustainable future for tea and our planet.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700">
+            <Button size="lg" className="[bg-[#00492C]/60 hover:bg-[#00492C]/70">
               Learn More About Our Impact
             </Button>
             <Button variant="outline" size="lg">

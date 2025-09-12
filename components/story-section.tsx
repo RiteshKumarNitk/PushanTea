@@ -93,7 +93,7 @@ export function StorySection() {
           >
             <div className="relative rounded-lg overflow-hidden">
               <img
-                src="../public/assets/products/divineproduct.png"
+                src="/assets/kkkk/bb/b6.jpeg"
                 alt="Bala Sarda, Founder of PUSHAN Teas in tea garden"
                 className="w-full h-[500px] object-cover"
               />
