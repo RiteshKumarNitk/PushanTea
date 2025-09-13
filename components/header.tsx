@@ -23,7 +23,7 @@ export function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled ? "bg-white shadow-md" : "bg-transparent"
+          isScrolled ? "bg-white text-[#00492C] shadow-md" : "bg-transparent text-white"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +33,7 @@ export function Header() {
                 variant="ghost"
                 onClick={() => setIsSideMenuOpen(true)}
                 className={`font-medium transition-colors ${
-                  isScrolled ? "text-amber-700 hover:text-amber-800" : "text-amber-700 hover:text-amber-800"
+                  isScrolled ? "text-[#00492C] hover:text-[#00492C]" : "text-white hover:text-white"
                 }`}
               >
                 <Menu className="h-4 w-4 mr-2" />
@@ -62,7 +62,7 @@ export function Header() {
                 variant="ghost"
                 size="icon"
                 className={`transition-colors ${
-                  isScrolled ? "text-amber-700 hover:text-amber-800" : "text-amber-700 hover:text-amber-800"
+                  isScrolled ? "text-[#00492C] hover:text-[#00492C]" : "text-white hover:text-white"
                 }`}
               >
                 <Search className="h-5 w-5" />
@@ -71,7 +71,7 @@ export function Header() {
                 variant="ghost"
                 size="icon"
                 className={`transition-colors ${
-                  isScrolled ? "text-amber-700 hover:text-amber-800" : "text-amber-700 hover:text-amber-800"
+                  isScrolled ? "text-[#00492C] hover:text-[#00492C]" : "text-white hover:text-white"
                 }`}
               >
                 <User className="h-5 w-5" />
@@ -80,7 +80,7 @@ export function Header() {
                 variant="ghost"
                 size="icon"
                 className={`transition-colors ${
-                  isScrolled ? "text-amber-700 hover:text-amber-800" : "text-amber-700 hover:text-amber-800"
+                  isScrolled ? "text-[#00492C] hover:text-[#00492C]" : "text-white hover:text-white"
                 }`}
               >
                 <ShoppingCart className="h-5 w-5" />

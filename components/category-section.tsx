@@ -35,8 +35,10 @@ export function CategorySection() {
           className="text-center mb-12"
         >
           <p className="text-sm uppercase tracking-wider text-gray-800 mb-2 font-medium">SOMETHING FOR EVERYONE</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-amber-700 text-balance">Shop by Category</h2>
-        </motion.div>
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-amber-700 font-[Inter]">
+  Shop by Category
+</h2>
+ </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
           {categories.map((category, index) => (
@@ -50,15 +52,14 @@ export function CategorySection() {
               className="group cursor-pointer"
             >
               <div className="text-center">
-                <div className="relative w-72 h-72 mx-auto mb-8 rounded-full overflow-hidden bg-[#00492C] shadow-2xl">
-                  <div className="w-full h-full rounded-full overflow-hidden">
-                    <img
-                      src={category.image || "/placeholder.svg"}
-                      alt={category.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                </div>
+<div className="relative w-72 h-96 mx-auto mb-8 overflow-hidden bg-[#00492C] shadow-2xl rounded-t-full">
+  <img
+    src={category.image || "/placeholder.svg"}
+    alt={category.title}
+    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+  />
+</div>
+
 
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-900 tracking-wide">{category.title}</h3>
