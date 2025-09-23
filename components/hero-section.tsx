@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-
-import bgVideo from "../public/assets/video/vvv.mp4";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const statsData = [
   "Featured on the Ellen's Show",
@@ -13,26 +12,61 @@ const statsData = [
   "Award Winning Teas",
   "Direct from Source",
   "Carbon Neutral Shipping",
-]
+];
 
 export function HeroSection() {
+  // Google Translate Script Load
+  useEffect(() => {
+    const addScript = document.createElement("script");
+    addScript.src =
+      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(addScript);
+
+    (window as any).googleTranslateElementInit = () => {
+      new (window as any).google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,hi",
+          autoDisplay: false,
+        },
+        "google_translate_element"
+      );
+    };
+  }, []);
+
+  // Force Change Language (Direct)
+  const changeLanguage = (lang: "en" | "hi") => {
+    const tryChange = () => {
+      const frame = document.querySelector<HTMLIFrameElement>(
+        "iframe.goog-te-menu-frame"
+      );
+      if (!frame) {
+        setTimeout(tryChange, 500); // wait until iframe loads
+        return;
+      }
+
+      const frameDoc = frame.contentDocument || frame.contentWindow?.document;
+      if (!frameDoc) return;
+
+      const langItems = frameDoc.querySelectorAll("a.goog-te-menu2-item");
+      langItems.forEach((el: any) => {
+        if (el.innerText.includes(lang === "en" ? "English" : "Hindi")) {
+          el.click(); // Direct click on language
+        }
+      });
+    };
+
+    tryChange();
+  };
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Hidden Google Translate Element */}
+      <div id="google_translate_element" className="hidden"></div>
+
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        {/* <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-sBJy17Hsn9CrPuMwJ8AbpJd48coJbV.png"
-          alt="Tea plantation workers in the mountains"
-          className="w-full h-full object-cover"
-        /> */}
-        {/* <video
-            src={bgVideo}
-            controls
-            autoPlay
-            loop
-            muted
-            className="w-full h-full object-cover"
-          /> */}
-          <video
+        <video
           autoPlay
           loop
           muted
@@ -44,6 +78,7 @@ export function HeroSection() {
         </video>
       </div>
 
+      {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center pt-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -57,7 +92,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-[#fff] font-serif"
           >
-            India's Finest Teas
+            Welcome to Our Pushaan Tea Center
           </motion.h1>
 
           <motion.p
@@ -66,13 +101,14 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl mb-8 text-[#fff]/80 font-medium"
           >
-            Door Delivered Across India
+            From Garden to Cup – Pure & Authentic Tea
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col md:flex-row gap-4 justify-center items-center"
           >
             <Button
               size="lg"
@@ -80,10 +116,29 @@ export function HeroSection() {
             >
               SHOP NOW
             </Button>
+
+            {/* Language Buttons */}
+            <div className="flex gap-3">
+              <Button
+                variant="outline"
+                onClick={() => changeLanguage("en")}
+                className="bg-white/90 text-black hover:bg-white"
+              >
+                English
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() => changeLanguage("hi")}
+                className="bg-white/90 text-black hover:bg-white"
+              >
+                हिंदी
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
       </div>
 
+      {/* Scrolling Stats */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -92,7 +147,6 @@ export function HeroSection() {
       >
         <div className="bg-black/80 backdrop-blur-sm py-4 overflow-hidden">
           <div className="flex animate-scroll">
-            {/* First set of stats */}
             <div className="flex items-center gap-8 text-white text-sm font-medium whitespace-nowrap px-8">
               {statsData.map((stat, index) => (
                 <div key={index} className="flex items-center gap-8">
@@ -101,7 +155,6 @@ export function HeroSection() {
                 </div>
               ))}
             </div>
-            {/* Duplicate for seamless loop */}
             <div className="flex items-center gap-8 text-white text-sm font-medium whitespace-nowrap px-8">
               {statsData.map((stat, index) => (
                 <div key={`duplicate-${index}`} className="flex items-center gap-8">
@@ -114,5 +167,5 @@ export function HeroSection() {
         </div>
       </motion.div>
     </section>
-  )
+  );
 }

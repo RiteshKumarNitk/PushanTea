@@ -8,46 +8,46 @@ import { Star } from "lucide-react"
 const products = [
   {
     id: 1,
-    name: "Chamomile Mint Citrus Green Tea, 50 Count",
-    image: "/chamomile-mint-citrus-green-tea-package.jpg",
+    name: "C.T.C.",
+    image: "/ctc.png",
     rating: 4.8,
     reviews: 29,
     price: 600,
     originalPrice: null,
-    teaBags: "50 Cups",
+    teaBags: "20 Count (Pack of 6) | 120 Total Tea Bags",
     label: null,
   },
   {
     id: 2,
-    name: "Turmeric Ashwagandha Herbal Tea Tisane, 50 Count",
-    image: "/turmeric-ashwagandha-herbal-tea-package.jpg",
+    name: "Divine UP",
+    image: "/divine_up.png",
     rating: 4.9,
     reviews: 777,
     price: 600,
     originalPrice: null,
-    teaBags: "50 Cups",
+    teaBags: "18 Count (Pack of 6) | 108 Total Tea Bags",
     label: null,
   },
   {
     id: 3,
-    name: "Darjeeling Summer Black Tea, 50 Count",
-    image: "/darjeeling-summer-black-tea-package.jpg",
+    name: "Royal Rajasthan",
+    image: "/RR.png",
     rating: 4.8,
     reviews: 80,
     price: 650,
     originalPrice: null,
-    teaBags: "50 Cups",
+    teaBags: "18 Count (Pack of 6) | 108 Total Tea Bags",
     label: null,
   },
   {
     id: 4,
-    name: "Classic English Breakfast Black Tea, 50 Count",
-    image: "/classic-english-breakfast-black-tea-package.jpg",
+    name: "Aamchi Mumbai",
+    image: "/AM.png",
     rating: 4.9,
     reviews: 25,
     price: 999,
     originalPrice: null,
-    teaBags: "250 Cups",
+    teaBags: "20 Count (Pack of 6) | 120 Total Tea Bags",
     label: "Loose Leaf",
   },
 ]
@@ -123,7 +123,7 @@ export function ProductSection() {
                   <h3 className="font-semibold text-card-foreground mb-2 text-sm leading-tight">{product.name}</h3>
 
                   {/* Tea Bags Info */}
-                  <p className="text-xs text-muted-foreground mb-3">Tea Bags | {product.teaBags}</p>
+                  <p className="text-xs text-muted-foreground mb-3">{product.teaBags}</p>
 
                   {/* Price */}
                   <div className="flex items-center justify-between mb-4">

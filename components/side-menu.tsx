@@ -1,6 +1,6 @@
 "use client"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Home, ShoppingBag, Info, ImageIcon, Phone, ChevronRight } from "lucide-react"
+import { X, Home, ShoppingBag, Info, ImageIcon, Phone, ChevronRight, Newspaper } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -15,7 +15,9 @@ export function SideMenu({ isOpen, onClose }: SideMenuProps) {
     { icon: ShoppingBag, label: "Shop All", href: "/shop" },
     { icon: Info, label: "About Us", href: "/about" },
     { icon: ImageIcon, label: "Gallery", href: "/gallery" },
+    { icon: Newspaper, label: "Blog", href: "/blog" },
     { icon: Phone, label: "Contact", href: "/contact" },
+    
   ]
 
   const categories = [

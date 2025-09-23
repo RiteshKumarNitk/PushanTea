@@ -8,27 +8,27 @@ import { Heart, Users, Leaf, Award } from "lucide-react"
 const values = [
   {
     icon: Heart,
-    title: "Direct Trade",
+    title: "Premium Tea Leaves",
     description:
-      "We work directly with tea growers, ensuring fair prices and sustainable livelihoods for farming communities.",
+      "We source hand-picked tea leaves to ensure rich aroma and authentic taste.",
   },
   {
     icon: Users,
-    title: "Community Impact",
+    title: "Hygienic Packaging",
     description:
-      "Supporting over 100,000 tea growers and their families across India through our direct-trade initiatives.",
+      "State-of-the-art packaging retains freshness, flavor, and purity in every pack.",
   },
   {
     icon: Leaf,
-    title: "Freshness Guarantee",
+    title: "Quality Assured",
     description:
-      "Garden-fresh teas shipped directly from source within 24-72 hours of production for maximum freshness.",
+      "Each batch undergoes strict quality checks for consistency and excellence.",
   },
   {
     icon: Award,
-    title: "Premium Quality",
+    title: "Trusted Manufacturer",
     description:
-      "Award-winning teas sourced from the finest tea gardens in India, carefully curated for exceptional taste.",
+      "Years of expertise in tea manufacturing and packaging trusted by customers nationwide.",
   },
 ]
 
