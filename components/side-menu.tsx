@@ -54,16 +54,27 @@ export function SideMenu({ isOpen, onClose }: SideMenuProps) {
           >
             <div className="p-6">
               {/* Header */}
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-[#00492C]">PUSHAN®</span>
-                  <span className="text-sm text-[#00492C]/70">Feel Alive</span>
-                </div>
-                <Button variant="ghost" size="icon" onClick={onClose} className="text-gray-500 hover:text-gray-700">
-                  <X className="h-6 w-6" />
-                </Button>
-              </div>
+              <Link href="/" className="flex items-center relative w-full">
+  <motion.img
+    src="/logo2.png"
+    alt="PUSHAAN Logo"
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="h-12 w-auto"
+  />
 
+  <Button
+    variant="ghost"
+    size="icon"
+    onClick={onClose}
+    className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+  >
+    <X className="h-6 w-6" />
+  </Button>
+</Link>
+
+ 
               {/* Main Navigation */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Navigation</h3>
@@ -106,7 +117,7 @@ export function SideMenu({ isOpen, onClose }: SideMenuProps) {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Get in Touch</h3>
                 <div className="space-y-3 text-sm text-gray-600">
                   <p>📞 +91-11-4084-5000</p>
-                  <p>✉️ hello@PUSHAN.com</p>
+                  <p>✉️ hello@PUSHAAN.com</p>
                   <p>🕒 Mon-Fri: 9AM-6PM IST</p>
                 </div>
               </div>

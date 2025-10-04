@@ -9,7 +9,7 @@ const products = [
   {
     id: 1,
     name: "C.T.C.",
-    image: "/ctc.png",
+    image: "/ctc.jpg",
     rating: 4.8,
     reviews: 29,
     price: 600,
@@ -20,7 +20,7 @@ const products = [
   {
     id: 2,
     name: "Divine UP",
-    image: "/divine_up.png",
+    image: "/divine_up.jpg",
     rating: 4.9,
     reviews: 777,
     price: 600,
@@ -31,7 +31,7 @@ const products = [
   {
     id: 3,
     name: "Royal Rajasthan",
-    image: "/RR.png",
+    image: "/RR.jpg",
     rating: 4.8,
     reviews: 80,
     price: 650,
@@ -42,7 +42,7 @@ const products = [
   {
     id: 4,
     name: "Aamchi Mumbai",
-    image: "/AM.png",
+    image: "/AM.jpg",
     rating: 4.9,
     reviews: 25,
     price: 999,

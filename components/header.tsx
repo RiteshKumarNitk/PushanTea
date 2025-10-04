@@ -41,21 +41,17 @@ export function Header() {
               </Button>
             </div>
 
-            <Link href="/" className="flex flex-col items-center">
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className={`text-2xl font-bold transition-colors ${isScrolled ? "text-[#00492C]" : "text-[#00492C]"}`}
-              >
-                PUSHAN®
-              </motion.div>
-              <div
-                className={`text-xs -mt-1 transition-colors ${isScrolled ? "text-[#00492C]/70" : "text-[#00492C]/70"}`}
-              >
-                Feel Alive
-              </div>
-            </Link>
+            <Link href="/" className="flex items-center">
+  <motion.img
+    src="/logo2.png"
+    alt="PUSHAAN Logo"
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="h-12 w-auto" // adjust height as needed
+  />
+</Link>
+
 
             <div className="flex items-center space-x-2">
               <Button

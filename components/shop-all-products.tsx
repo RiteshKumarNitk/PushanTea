@@ -101,7 +101,7 @@ export function ShopAllProducts() {
                 className="w-20 h-24 md:w-24 md:h-28 lg:w-28 lg:h-32"
               >
                 <img
-                  src={`/PUSHAN-tea-product-.jpg?height=120&width=100&query=PUSHAN tea product ${item}`}
+                  src={`/PUSHAAN-tea-product-.jpg?height=120&width=100&query=PUSHAAN tea product ${item}`}
                   alt={`Tea Product ${item}`}
                   className="w-full h-full object-contain"
                 />

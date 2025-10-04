@@ -5,44 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Leaf, Recycle, TreePine, Droplets, Sun, Globe } from "lucide-react"
 
-const initiatives = [
-  {
-    icon: Leaf,
-    title: "Carbon Neutral Shipping",
-    description: "100% carbon-neutral shipping across all our global deliveries through verified offset programs.",
-    metric: "0kg CO₂",
-  },
-  {
-    icon: TreePine,
-    title: "Reforestation Program",
-    description: "Planting native trees in tea-growing regions to restore biodiversity and combat climate change.",
-    metric: "50K+ Trees",
-  },
-  {
-    icon: Recycle,
-    title: "Sustainable Packaging",
-    description: "Biodegradable tea bags and recyclable packaging materials to minimize environmental impact.",
-    metric: "100% Recyclable",
-  },
-  {
-    icon: Droplets,
-    title: "Water Conservation",
-    description: "Supporting water-efficient farming practices and rainwater harvesting in tea gardens.",
-    metric: "30% Less Water",
-  },
-  {
-    icon: Sun,
-    title: "Solar-Powered Facilities",
-    description: "Transitioning to renewable energy sources across our processing and packaging facilities.",
-    metric: "80% Solar",
-  },
-  {
-    icon: Globe,
-    title: "Biodiversity Protection",
-    description: "Preserving natural habitats and promoting organic farming practices in tea-growing regions.",
-    metric: "500+ Species",
-  },
-]
 
 export function EnvironmentalSection() {
   return (
@@ -98,19 +60,19 @@ export function EnvironmentalSection() {
             <div className="grid grid-cols-2 gap-4 text-center">
               <div className="bg-white/10 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-1">85%</div>
-                <p className="text-sm text-[#00492C]/10">Carbon Reduction</p>
+                <p className="text-sm text-white">Carbon Reduction</p>
               </div>
               <div className="bg-white/10 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-1">2025</div>
-                <p className="text-sm text-[#00492C]/10">Net Zero Target</p>
+                <p className="text-sm text-white">Net Zero Target</p>
               </div>
               <div className="bg-white/10 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-1">100%</div>
-                <p className="text-sm text-[#00492C]/10">Renewable Energy</p>
+                <p className="text-sm text-white">Renewable Energy</p>
               </div>
               <div className="bg-white/10 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-1">50K+</div>
-                <p className="text-sm text-[#00492C]/10">Trees Planted</p>
+                <p className="text-sm  text-white">Trees Planted</p>
               </div>
             </div>
           </div>
@@ -124,41 +86,13 @@ export function EnvironmentalSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Our Green Initiatives</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive sustainability programs that make a real difference for our planet and communities
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {initiatives.map((initiative, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="p-6 h-full bg-card border border-border hover:shadow-lg transition-all duration-300 group">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 transition-colors">
-                      <initiative.icon className="w-6 h-6 text-[#00492C]" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-card-foreground mb-2">{initiative.title}</h4>
-                      <div className="text-sm font-medium text-[#00492C] mb-2">{initiative.metric}</div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{initiative.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+
+         
         </motion.div>
 
         {/* Call to Action */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -167,7 +101,7 @@ export function EnvironmentalSection() {
         >
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Join Our Sustainability Journey</h3>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Every cup of PUSHAN tea you enjoy contributes to our environmental initiatives. Together, we can create a
+            Every cup of PUSHAAN tea you enjoy contributes to our environmental initiatives. Together, we can create a
             more sustainable future for tea and our planet.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -178,7 +112,46 @@ export function EnvironmentalSection() {
               Download Sustainability Report
             </Button>
           </div>
-        </motion.div>
+        </motion.div> */}
+
+      
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="py-20 container mx-auto px-4 sm:px-6 lg:px-8"
+>
+  <div className="flex flex-col md:flex-row items-center gap-12">
+    {/* Content */}
+    <div className="md:w-1/2 text-center md:text-left">
+      <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
+        Our Global Footprint
+      </h3>
+      <p className="text-muted-foreground text-lg md:text-xl mb-4 leading-relaxed">
+        PUSHAAN Tea has a growing presence across the globe. Our factories and production units are strategically
+        located in key tea-growing regions to ensure quality and freshness. This map highlights the locations of
+        our main facilities, helping you understand how we deliver sustainable, high-quality tea from farm to cup.
+      </p>
+      <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
+        Each facility follows strict sustainability and quality standards, ensuring that our environmental and social
+        commitments are met wherever we operate.
+      </p>
+    </div>
+
+    {/* Image */}
+    <div className="md:w-1/2">
+      <div className="relative w-full h-96 md:h-[500px] overflow-hidden rounded-3xl shadow-2xl">
+        <img
+          src="/map.jpg"
+          alt="PUSHAAN Tea Factory Locations"
+          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+        />
+      </div>
+    </div>
+  </div>
+</motion.div>
+
       </div>
     </section>
   )
