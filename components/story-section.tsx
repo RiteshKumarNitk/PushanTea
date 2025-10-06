@@ -5,32 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Heart, Users, Leaf, Award } from "lucide-react"
 
-const values = [
-  {
-    icon: Heart,
-    title: "Premium Tea Leaves",
-    description:
-      "We source hand-picked tea leaves to ensure rich aroma and authentic taste.",
-  },
-  {
-    icon: Users,
-    title: "Hygienic Packaging",
-    description:
-      "State-of-the-art packaging retains freshness, flavor, and purity in every pack.",
-  },
-  {
-    icon: Leaf,
-    title: "Quality Assured",
-    description:
-      "Each batch undergoes strict quality checks for consistency and excellence.",
-  },
-  {
-    icon: Award,
-    title: "Trusted Manufacturer",
-    description:
-      "Years of expertise in tea manufacturing and packaging trusted by customers nationwide.",
-  },
-]
 
 export function StorySection() {
   return (
@@ -107,7 +81,7 @@ export function StorySection() {
         </div>
 
         {/* Values Grid */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -142,40 +116,10 @@ export function StorySection() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Impact Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-16 bg-muted/30 rounded-2xl p-8 md:p-12"
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Our Global Impact</h3>
-            <p className="text-muted-foreground">Making a difference, one cup at a time</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">100K+</div>
-              <p className="text-muted-foreground">Tea Growers Supported</p>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">100+</div>
-              <p className="text-muted-foreground">Countries Served</p>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">5M+</div>
-              <p className="text-muted-foreground">Cups Enjoyed Daily</p>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">₹50Cr+</div>
-              <p className="text-muted-foreground">Paid to Growers</p>
-            </div>
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   )

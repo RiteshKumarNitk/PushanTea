@@ -53,6 +53,20 @@ const infoSections = [
     image: "/working.jpg",
     reverse: true,
   },
+   {
+    id: 5,
+    title: "Packaging & Quality",
+    description: `At Pushaan Tea, we believe that great tea deserves great packaging. Our packaging process is designed to lock in freshness and aroma until the very last sip. Each batch undergoes multiple rounds of quality checks to ensure consistency in flavor, color, and fragrance. We use food-grade, eco-friendly materials that not only protect the tea but also reflect our commitment to sustainability. Every pouch and box is sealed with care, ensuring that when you open a pack of Pushaan Tea, you experience purity straight from the source.`,
+    image: "/trusted.jpg",
+    reverse: false,
+  },
+  {
+    id: 6,
+    title: "Trusted by Generations",
+    description: `Pushaan Tea stands as a symbol of trust, purity, and tradition. Over the years, we’ve built lasting relationships with our customers by delivering authentic flavors and uncompromised quality. Families across generations have chosen Pushaan Tea as a part of their daily life — a comforting ritual that brings people together. Our brand’s journey is guided by transparency, integrity, and a deep respect for nature and community. When you choose Pushaan, you choose a heritage of trust that continues to grow, cup after cup.`,
+    image: "/team.jpg",
+    reverse: true,
+  },
 ]
 
 
@@ -73,6 +87,8 @@ export function CategorySection() {
             Shop by Category
           </h2>
         </motion.div>
+
+
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
           {categories.map((category, index) => (
@@ -103,6 +119,12 @@ export function CategorySection() {
         </div>
       </div>
 
+<div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Our Core Values</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Every cup of PUSHAAN tea represents our commitment to quality, sustainability, and social impact
+            </p>
+          </div>
       {/* ======= Info Sections Below Category ======= */}
       <div className="py-20 container mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
         {infoSections.map((section, index) => (

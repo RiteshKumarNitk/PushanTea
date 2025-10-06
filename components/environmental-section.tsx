@@ -2,16 +2,91 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Leaf, Recycle, TreePine, Droplets, Sun, Globe } from "lucide-react"
-
 
 export function EnvironmentalSection() {
   return (
-    <section className="py-16 bg-gradient-to-b from-green-50/50 to-background">
+    <section className="py-12 bg-gradient-to-b from-green-50/50 to-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+
+        {/* Global Impact Stats */}
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="bg-muted/30 rounded-2xl p-6 md:p-10 mb-10"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+              Our Global Impact
+            </h3>
+            <p className="text-muted-foreground">Making a difference, one cup at a time</p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-1">100K+</div>
+              <p className="text-muted-foreground text-sm">Tea Growers Supported</p>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-1">100+</div>
+              <p className="text-muted-foreground text-sm">Countries Served</p>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-1">5M+</div>
+              <p className="text-muted-foreground text-sm">Cups Enjoyed Daily</p>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-1">₹50Cr+</div>
+              <p className="text-muted-foreground text-sm">Paid to Growers</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Rajasthan Footprint Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12"
+        >
+          {/* Text Section */}
+          <div className="md:w-1/2 text-center md:text-left">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
+              Our Rajasthan Footprint
+            </h3>
+            <p className="text-muted-foreground text-base md:text-lg mb-3 leading-relaxed">
+              PUSHAAN Tea has a growing presence across the rajasthan. Our factories and production units
+              are strategically located in key tea-growing regions to ensure quality and freshness.
+              This map highlights the locations of our main facilities, showing how we deliver
+              sustainable, high-quality tea from farm to cup.
+            </p>
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+              Each facility follows strict sustainability and quality standards, ensuring our
+              environmental and social commitments are met wherever we operate.
+            </p>
+          </div>
+
+          {/* Map Image */}
+          <div className="md:w-1/2">
+            <div className="relative w-full h-80 md:h-[420px] overflow-hidden rounded-3xl shadow-xl">
+              <img
+                src="/map.jpg"
+                alt="PUSHAAN Tea Factory Locations"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+          </div>
+        </motion.div>
+
+      </div>
+    </section>
+  )
+}
+
+{/* Header */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -29,7 +104,7 @@ export function EnvironmentalSection() {
         </motion.div>
 
         {/* Main Environmental Promise */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -76,10 +151,10 @@ export function EnvironmentalSection() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Initiatives Grid */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -89,7 +164,7 @@ export function EnvironmentalSection() {
 
 
          
-        </motion.div>
+        </motion.div> */}
 
         {/* Call to Action */}
         {/* <motion.div
@@ -113,46 +188,3 @@ export function EnvironmentalSection() {
             </Button>
           </div>
         </motion.div> */}
-
-      
-<motion.div
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
-  className="py-20 container mx-auto px-4 sm:px-6 lg:px-8"
->
-  <div className="flex flex-col md:flex-row items-center gap-12">
-    {/* Content */}
-    <div className="md:w-1/2 text-center md:text-left">
-      <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
-        Our Global Footprint
-      </h3>
-      <p className="text-muted-foreground text-lg md:text-xl mb-4 leading-relaxed">
-        PUSHAAN Tea has a growing presence across the globe. Our factories and production units are strategically
-        located in key tea-growing regions to ensure quality and freshness. This map highlights the locations of
-        our main facilities, helping you understand how we deliver sustainable, high-quality tea from farm to cup.
-      </p>
-      <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-        Each facility follows strict sustainability and quality standards, ensuring that our environmental and social
-        commitments are met wherever we operate.
-      </p>
-    </div>
-
-    {/* Image */}
-    <div className="md:w-1/2">
-      <div className="relative w-full h-96 md:h-[500px] overflow-hidden rounded-3xl shadow-2xl">
-        <img
-          src="/map.jpg"
-          alt="PUSHAAN Tea Factory Locations"
-          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-        />
-      </div>
-    </div>
-  </div>
-</motion.div>
-
-      </div>
-    </section>
-  )
-}
