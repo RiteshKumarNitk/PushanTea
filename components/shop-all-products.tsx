@@ -91,23 +91,7 @@ export function ShopAllProducts() {
       {/* Hero Section with Products Display */}
       <div className="bg-[#00492C] pt-20 pb-8">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-items-center">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: item * 0.1 }}
-                className="w-20 h-24 md:w-24 md:h-28 lg:w-28 lg:h-32"
-              >
-                <img
-                  src={`/PUSHAAN-tea-product-.jpg?height=120&width=100&query=PUSHAAN tea product ${item}`}
-                  alt={`Tea Product ${item}`}
-                  className="w-full h-full object-contain"
-                />
-              </motion.div>
-            ))}
-          </div>
+        
         </div>
       </div>
 
