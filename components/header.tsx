@@ -6,10 +6,12 @@ import { Menu, Search, ShoppingCart, User } from "lucide-react"
 import { motion } from "framer-motion"
 import { SideMenu } from "./side-menu"
 import Link from "next/link"
+import { CartDrawer } from "./cart-drawer"  // import added
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
+  const [isCartOpen, setIsCartOpen] = useState(false) // ✅ new state
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +30,8 @@ export function Header() {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
+            
+            {/* Side Menu Button */}
             <div className="flex items-center">
               <Button
                 variant="ghost"
@@ -41,18 +45,19 @@ export function Header() {
               </Button>
             </div>
 
+            {/* Logo */}
             <Link href="/" className="flex items-center">
-  <motion.img
-    src="/logo2.png"
-    alt="PUSHAAN Logo"
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    className="h-12 w-auto" // adjust height as needed
-  />
-</Link>
+              <motion.img
+                src="/logo2.png"
+                alt="PUSHAAN Logo"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="h-12 w-auto"
+              />
+            </Link>
 
-
+            {/* Icons */}
             <div className="flex items-center space-x-2">
               <Button
                 variant="ghost"
@@ -63,6 +68,7 @@ export function Header() {
               >
                 <Search className="h-5 w-5" />
               </Button>
+
               <Button
                 variant="ghost"
                 size="icon"
@@ -72,12 +78,13 @@ export function Header() {
               >
                 <User className="h-5 w-5" />
               </Button>
+
+              {/* 🛒 Cart Button */}
               <Button
                 variant="ghost"
                 size="icon"
-                className={`transition-colors ${
-                  isScrolled ? "text-[#00492C] hover:text-[#00492C]" : "text-white hover:text-white"
-                }`}
+                onClick={() => setIsCartOpen(true)} // ✅ opens cart
+                className={`${isScrolled ? "text-[#00492C]" : "text-white"}`}
               >
                 <ShoppingCart className="h-5 w-5" />
               </Button>
@@ -86,7 +93,11 @@ export function Header() {
         </div>
       </header>
 
+      {/* Side Menu */}
       <SideMenu isOpen={isSideMenuOpen} onClose={() => setIsSideMenuOpen(false)} />
+
+      {/* Cart Drawer */}
+      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
   )
 }
