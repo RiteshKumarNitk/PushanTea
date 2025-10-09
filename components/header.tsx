@@ -68,16 +68,17 @@ export function Header() {
               >
                 <Search className="h-5 w-5" />
               </Button>
-
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`transition-colors ${
-                  isScrolled ? "text-[#00492C] hover:text-[#00492C]" : "text-white hover:text-white"
-                }`}
-              >
-                <User className="h-5 w-5" />
-              </Button>
+<Link href="/login">
+  <Button
+    variant="ghost"
+    size="icon"
+    className={`transition-colors ${
+      isScrolled ? "text-[#00492C] hover:text-[#00492C]" : "text-white hover:text-white"
+    }`}
+  >
+    <User className="h-5 w-5" />
+  </Button>
+</Link>
 
               {/* 🛒 Cart Button */}
               <Button
