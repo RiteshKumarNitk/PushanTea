@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Heart, Users, Leaf, Award } from "lucide-react"
+import Link from "next/link"
 
 
 export function StorySection() {
@@ -48,9 +49,13 @@ export function StorySection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Learn Our Story
-              </Button>
+
+              <Link href="/about">
+  <Button size="lg" className="bg-primary hover:bg-primary/90">
+    Learn Our Story
+  </Button>
+</Link>
+            
               <Button variant="outline" size="lg">
                 Meet Our Growers
               </Button>

@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import Link from "next/link"
+
 
 const statsData = [
   "Featured on the Ellen's Show",
@@ -110,16 +112,16 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col md:flex-row gap-4 justify-center items-center"
           >
-            <Button
-              size="lg"
-              className="bg-[#00492C] hover:bg-[#00492C]/90 text-white px-8 py-4 text-lg font-semibold rounded-sm transition-all duration-300"
-            >
-              SHOP NOW
-            </Button>
+        
+             <Link href="/shop">
+  <Button size="lg" className="bg-[#00492C] hover:bg-[#00492C]/90 text-white px-8 py-4 text-lg font-semibold rounded-sm transition-all duration-300">
+    SHOP NOW
+  </Button>
+</Link>
 
             {/* Language Buttons */}
             <div className="flex gap-3">
-              <Button
+              {/* <Button
                 variant="outline"
                 onClick={() => changeLanguage("en")}
                 className="bg-white/90 text-black hover:bg-white"
@@ -132,7 +134,7 @@ export function HeroSection() {
                 className="bg-white/90 text-black hover:bg-white"
               >
                 हिंदी
-              </Button>
+              </Button> */}
             </div>
           </motion.div>
         </motion.div>
