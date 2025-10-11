@@ -16,7 +16,7 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Amit Verma",
+    name: "Arpita Verma",
     title: "Software Engineer",
     image: "/test3.png",
     quote:
@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Neha Patil",
+    name: "Nilesh Patil",
     title: "Yoga Instructor",
     image: "/test2.png",
     quote:
