@@ -144,7 +144,7 @@ export function HeroSection() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
+        transition={{ duration: 0.8, delay: 1}}
         className="absolute bottom-0 left-0 right-0 z-10"
       >
         <div className="bg-black/80 backdrop-blur-sm py-4 overflow-hidden">

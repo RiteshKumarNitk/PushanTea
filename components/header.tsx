@@ -59,7 +59,7 @@ export function Header() {
 
             {/* Icons */}
             <div className="flex items-center space-x-2">
-              {/* <Button
+               <Button
                 variant="ghost"
                 size="icon"
                 className={`transition-colors ${
