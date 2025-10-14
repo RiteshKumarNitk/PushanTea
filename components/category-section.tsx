@@ -2,8 +2,19 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 
 const categories = [
+  {
+    id: 2,
+    title: "Shree Kadak",
+    image: "/ctc.jpg",
+    description: "18 Count (Pack of 6) | 108 Total Tea Bags",
+  },
   {
     id: 2,
     title: "Divine UP",
@@ -70,6 +81,21 @@ const infoSections = [ {
        ]
 
 export function CategorySection() {
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 700,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    arrows: true,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
+    ],
+  };
+
   return (
     <section className="bg-gradient-to-b from-white to-amber-50/30">
       {/* ======= Category Section ======= */}
@@ -89,36 +115,40 @@ export function CategorySection() {
           </h2>
         </motion.div>
 
-        {/* === Category Cards === */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
-          {categories.map((category, index) => (
-            <Link href="/shop" key={category.id}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="group cursor-pointer"
-              >
-                <div className="text-center">
-                  <div className="relative w-72 h-96 mx-auto mb-8 overflow-hidden bg-[#00492C] shadow-2xl rounded-t-full">
-                    <img
-                      src={category.image || "/placeholder.svg"}
-                      alt={category.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold text-gray-900 tracking-wide">
-                      {category.title}
-                    </h3>
-                    <p className="text-gray-600 mt-2 text-sm">{category.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            </Link>
-          ))}
+        {/* === Category Slider === */}
+        <div className="max-w-7xl mx-auto">
+          <Slider {...sliderSettings}>
+            {categories.map((category, index) => (
+              <div key={category.id} className="px-4">
+                <Link href="/shop">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.02 }}
+                    className="group cursor-pointer"
+                  >
+                    <div className="text-center">
+                      <div className="relative w-72 h-96 mx-auto mb-8 overflow-hidden bg-[#00492C] shadow-2xl rounded-t-full">
+                        <img
+                          src={category.image || "/placeholder.svg"}
+                          alt={category.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 tracking-wide">
+                        {category.title}
+                      </h3>
+                      <p className="text-gray-600 mt-2 text-sm">
+                        {category.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                </Link>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
 
@@ -170,5 +200,5 @@ export function CategorySection() {
         ))}
       </div>
     </section>
-  )
+  );
 }
