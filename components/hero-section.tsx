@@ -120,7 +120,7 @@ export function HeroSection() {
 </Link>
 <Link href="/bulkshop">
   <Button size="lg" className="bg-[#00492C] hover:bg-[#00492C]/90 text-white px-8 py-4 text-lg font-semibold rounded-sm transition-all duration-300">
-   SHOP IN BULK
+   BULK ORDER
   </Button>
 </Link>
 

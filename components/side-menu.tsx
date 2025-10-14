@@ -86,7 +86,7 @@ export function SideMenu({ isOpen, onClose }: SideMenuProps) {
               {/* Main Navigation */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  Navigation
+                  
                 </h3>
                 <nav className="space-y-2">
                   {menuItems.map((item) => (

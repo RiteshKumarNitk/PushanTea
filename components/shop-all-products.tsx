@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Select,
@@ -24,6 +24,20 @@ interface Product {
   reviews: number
   image: string
   category: string
+}
+
+const brandHeadings: Record<string, string> = {
+  AM: "Amchi Mumbai",
+  RR: "Rajasthan Royal",
+  UP_Divine: "UP Divine",
+  "Shree Kadak": "Shree Kadak",
+}
+
+const brandStyles: Record<string, string> = {
+  AM: "bg-blue-50",
+  RR: "bg-pink-50",
+  UP_Divine: "bg-green-50",
+  "Shree Kadak": "bg-yellow-50",
 }
 
 const products: Product[] = [
@@ -55,52 +69,54 @@ const products: Product[] = [
 export function ShopAllProducts() {
   const [priceRange, setPriceRange] = useState([0, 3000])
   const [sortBy, setSortBy] = useState("featured")
-  const [currentPage, setCurrentPage] = useState(1)
-  const [viewAll, setViewAll] = useState(false)
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null)
 
-  // Filtered Products by Brand and Price
+  const brandRefs = {
+    AM: useRef<HTMLDivElement>(null),
+    RR: useRef<HTMLDivElement>(null),
+    UP_Divine: useRef<HTMLDivElement>(null),
+    "Shree Kadak": useRef<HTMLDivElement>(null),
+  }
+
+  useEffect(() => {
+    if (selectedBrand && selectedBrand !== "All") {
+      brandRefs[selectedBrand as keyof typeof brandRefs]?.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    } else if (selectedBrand === "All") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }, [selectedBrand])
+
   const filteredProducts = products.filter(
-    (p) =>
-      (!selectedBrand || p.title === selectedBrand) &&
-      p.price >= priceRange[0] &&
-      p.price <= priceRange[1]
+    (p) => p.price >= priceRange[0] && p.price <= priceRange[1]
   )
 
-  const productsPerPage = 4
-  const totalPages = Math.ceil(filteredProducts.length / productsPerPage)
-  const startIndex = (currentPage - 1) * productsPerPage
-
-  const currentProducts = viewAll
-    ? filteredProducts
-    : filteredProducts.slice(startIndex, startIndex + productsPerPage)
+  const currentProducts = filteredProducts
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <div className="bg-[#00492C] pt-20 pb-8">
-        <div className="container mx-auto px-4"></div>
-      </div>
-
-      {/* Main Content */}
-      <div className="bg-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-amber-700 mb-4">
-              All Products
-            </h1>
+        <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-amber-700 mb-4">All Products</h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Explore our signature tea collections across premium brands.
             </p>
+        <div className="container mx-auto px-4"></div>
+      </div>
+
+      <div className="bg-white py-12">
+        <div className="container mx-auto">
+          
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
-            {/* Sidebar Filters */}
+            {/* Sidebar */}
             <div className="lg:w-1/4">
               <div className="bg-white border border-gray-200 rounded-lg p-6 sticky top-24">
                 <h3 className="text-xl font-semibold text-gray-900 mb-6">Filters</h3>
 
-                {/* Price Filter */}
                 <div className="mb-8">
                   <h4 className="text-lg font-medium text-gray-800 mb-4">Price</h4>
                   <Slider
@@ -118,18 +134,29 @@ export function ShopAllProducts() {
                   </div>
                 </div>
 
-                {/* Brand Filter */}
                 <div>
                   <h4 className="text-lg font-medium text-gray-800 mb-4">Brand</h4>
-                  {["AM", "RR", "UP_Divine", "Shree Kadak"].map((brand) => (
+                  {["All", "AM", "RR", "UP_Divine", "Shree Kadak"].map((brand) => (
                     <label key={brand} className="flex items-center mb-2 cursor-pointer">
                       <input
                         type="radio"
                         checked={selectedBrand === brand}
-                        onChange={() => {
-                          setSelectedBrand(brand === selectedBrand ? null : brand)
-                          setCurrentPage(1)
-                        }}
+                        onChange={() => setSelectedBrand(brand)}
+                        className="mr-2 accent-[#00492C]"
+                      />
+                      <span className="text-gray-700">{brand}</span>
+                    </label>
+                  ))}
+                </div>
+
+                 <div>
+                  <h4 className="text-lg font-medium text-gray-800 mb-4"> Upcoming Brand</h4>
+                  {["Black Tea", "Green Tea", "Red Tree"].map((brand) => (
+                    <label key={brand} className="flex items-center mb-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        checked={selectedBrand === brand}
+                        onChange={() => setSelectedBrand(brand)}
                         className="mr-2 accent-[#00492C]"
                       />
                       <span className="text-gray-700">{brand}</span>
@@ -139,147 +166,73 @@ export function ShopAllProducts() {
               </div>
             </div>
 
-            {/* Products Grid */}
+            {/* Products */}
             <div className="lg:w-3/4">
-              <div className="flex items-center justify-between mb-8">
-                <p className="text-gray-600">
-                  Showing {currentProducts.length} of {filteredProducts.length} products
-                </p>
+              {["AM", "RR", "UP_Divine", "Shree Kadak"].map((brand) => {
+                const brandProducts = currentProducts.filter((p) => p.title === brand)
+                if (brandProducts.length === 0) return null
 
-                <div className="flex items-center gap-2">
-                  <span className="text-amber-700 font-medium">Sort By:</span>
-                  <Select value={sortBy} onValueChange={setSortBy}>
-                    <SelectTrigger className="w-32">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="featured">Featured</SelectItem>
-                      <SelectItem value="price-low">Price: Low to High</SelectItem>
-                      <SelectItem value="price-high">Price: High to Low</SelectItem>
-                      <SelectItem value="rating">Rating</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
+                return (
+                  <div key={brand} ref={brandRefs[brand as keyof typeof brandRefs]} className="mb-16">
+                    <h2 className="text-3xl font-bold text-amber-700 mb-8 border-b-2 border-amber-700 text-center pb-2">
+  {brandHeadings[brand]}
+</h2>
 
-              {/* Product Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                {currentProducts.map((product) => (
-                  <motion.div
-                    key={product.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
-                  >
-                    <div className="aspect-square p-6 bg-gray-50">
-                      <img
-                        src={product.image || "/placeholder.svg"}
-                        alt={product.name}
-                        className="w-full h-full object-contain"
-                      />
+
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                      {brandProducts.map((product) => (
+                        <motion.div
+                          key={product.id}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                        >
+                          <div className="aspect-square p-3 bg-gray-50">
+                            <img
+                              src={product.image || "/placeholder.svg"}
+                              alt={product.name}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+
+                          <div className="p-6">
+                            <div className="flex items-center mb-3">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`h-4 w-4 ${
+                                    i < Math.floor(product.rating)
+                                      ? "text-yellow-400 fill-current"
+                                      : "text-gray-300"
+                                  }`}
+                                />
+                              ))}
+                              <span className="ml-2 text-xs text-gray-600">
+                                {product.reviews} reviews
+                              </span>
+                            </div>
+
+                            <h3 className="text-sm font-semibold text-gray-900 mb-2 line-clamp-2">
+                              {product.name}
+                            </h3>
+
+                            <div className="flex items-center mb-4">
+                              <span className="text-sm font-bold text-gray-900">₹ {product.price}</span>
+                              <span className="ml-2 text-sm text-gray-500 line-through">
+                                ₹ {product.originalPrice}
+                              </span>
+                            </div>
+
+                            <Button className="w-full bg-[#00492C] hover:bg-[#00492C]/90 text-white font-medium py-3">
+                              ADD TO CART
+                            </Button>
+                          </div>
+                        </motion.div>
+                      ))}
                     </div>
-                    <div className="p-6">
-                      {/* Rating */}
-                      <div className="flex items-center mb-3">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-4 w-4 ${
-                              i < Math.floor(product.rating)
-                                ? "text-yellow-400 fill-current"
-                                : "text-gray-300"
-                            }`}
-                          />
-                        ))}
-                        <span className="ml-2 text-sm text-gray-600">
-                          {product.reviews} reviews
-                        </span>
-                      </div>
-
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-                        {product.name}
-                      </h3>
-                      <p className="text-gray-600 mb-4">{product.description}</p>
-
-                      <div className="flex items-center mb-4">
-                        <span className="text-xl font-bold text-gray-900">₹ {product.price}</span>
-                        <span className="ml-2 text-sm text-gray-500 line-through">
-                          ₹ {product.originalPrice}
-                        </span>
-                      </div>
-
-                      <Button className="w-full bg-[#00492C] hover:bg-[#00492C]/90 text-white font-medium py-3">
-                        ADD TO CART
-                      </Button>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Pagination */}
-              {!viewAll && totalPages > 1 && (
-                <div className="flex items-center justify-center gap-4">
-                  <Button
-                    variant="outline"
-                    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                    disabled={currentPage === 1}
-                    className="flex items-center gap-2"
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                    Previous
-                  </Button>
-
-                  {[...Array(totalPages)].map((_, i) => (
-                    <Button
-                      key={i + 1}
-                      variant={currentPage === i + 1 ? "default" : "outline"}
-                      onClick={() => setCurrentPage(i + 1)}
-                      className={`w-10 h-10 ${
-                        currentPage === i + 1
-                          ? "bg-[#00492C] hover:bg-[#00492C]/90"
-                          : ""
-                      }`}
-                    >
-                      {i + 1}
-                    </Button>
-                  ))}
-
-                  <Button
-                    variant="outline"
-                    onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                    disabled={currentPage === totalPages}
-                    className="flex items-center gap-2"
-                  >
-                    Next
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
-                </div>
-              )}
-
-              {/* View All / Show Less */}
-              <div className="text-center mt-8">
-                {!viewAll ? (
-                  <Button
-                    variant="outline"
-                    onClick={() => setViewAll(true)}
-                    className="text-[#00492C] border-[#00492C] hover:bg-[#00492C] hover:text-white bg-transparent"
-                  >
-                    VIEW ALL
-                  </Button>
-                ) : (
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      setViewAll(false)
-                      setCurrentPage(1)
-                      window.scrollTo({ top: 0, behavior: "smooth" })
-                    }}
-                    className="text-[#00492C] border-[#00492C] hover:bg-[#00492C] hover:text-white bg-transparent"
-                  >
-                    SHOW LESS
-                  </Button>
-                )}
-              </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -287,3 +240,4 @@ export function ShopAllProducts() {
     </div>
   )
 }
+

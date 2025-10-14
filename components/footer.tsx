@@ -21,7 +21,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className=" bg-amber-50 text-black">
       {/* Newsletter Section */}
       <div className="border-b border-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -33,7 +33,7 @@ export function Footer() {
             className="max-w-4xl mx-auto text-center"
           >
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Stay Steeped in the Latest</h3>
-            <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-900 mb-8 max-w-2xl mx-auto">
               Get exclusive access to new tea launches, brewing tips, and special offers delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -49,7 +49,7 @@ export function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container bg-[#00492C] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
           <motion.div
@@ -177,7 +177,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-800">
+      <div className="border-t bg-[#00492C] border-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm">© 2024 PUSHAAN Teas. All rights reserved.</p>
