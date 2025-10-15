@@ -5,7 +5,7 @@ import { ProductSection } from "@/components/product-section"
 import { TestimonialSection } from "@/components/testimonial-section"
 import { StorySection } from "@/components/story-section"
 import { EnvironmentalSection } from "@/components/environmental-section"
-import { Footer } from "@/components/footer"
+import  Footer from "@/components/footer"
 import { Contact } from "@/components/contact"
 
 export default function Home() {
