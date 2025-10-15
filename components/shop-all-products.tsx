@@ -31,19 +31,32 @@ const brandHeadings: Record<string, string> = {
   RR: "Rajasthan Royal",
   UP_Divine: "UP Divine",
   "Shree Kadak": "Shree Kadak",
+  MP:"Mast Punjabi",
+  upcoming:"upcoming"
 }
+
+const brandImages: Record<string, string> = {
+  AM: "/amscene.jpg",
+  RR: "/rrscene.jpg",
+  UP_Divine: "upscene.jpg",
+  "Shree Kadak": "/brands/shree-kadak-banner.jpg",
+  MP: "/brands/mast-punjabi-banner.jpg",
+  upcoming: "/upcoming.jpg",
+};
+
 
 const brandStyles: Record<string, string> = {
   AM: "bg-blue-50",
   RR: "bg-pink-50",
   UP_Divine: "bg-green-50",
   "Shree Kadak": "bg-yellow-50",
+  upcoming:"upcoming"
 }
 
 const products: Product[] = [
   // --- AM Brand ---
   { id: 1, title: "AM", name: "AM Premium Green Tea 1kg", description: "Loose Leaf | 1kg Pack | 400 Cups", price: 1200, originalPrice: 1500, rating: 4.8, reviews: 980, image: "/am1kg.jpg", category: "green-tea" },
-  { id: 2, title: "AM", name: "AM Premium Green Tea 500g", description: "Loose Leaf | 500g Pack | 200 Cups", price: 650, originalPrice: 850, rating: 4.7, reviews: 510, image: "/am-premium-green-tea-500g.jpg", category: "green-tea" },
+  { id: 2, title: "AM", name: "AM Premium Green Tea 500g", description: "Loose Leaf | 500g Pack | 200 Cups", price: 650, originalPrice: 850, rating: 4.7, reviews: 510, image: "/am500g.jpg", category: "green-tea" },
   { id: 3, title: "AM", name: "AM Premium Green Tea 250g", description: "Loose Leaf | 250g Pack | 100 Cups", price: 360, originalPrice: 480, rating: 4.6, reviews: 290, image: "/am250g.jpg", category: "green-tea" },
   { id: 4, title: "AM", name: "AM Premium Green Tea 100g", description: "Loose Leaf | 100g Pack | 40 Cups", price: 160, originalPrice: 220, rating: 4.5, reviews: 120, image: "/am-premium-green-tea-100g.jpg", category: "green-tea" },
 
@@ -61,9 +74,20 @@ const products: Product[] = [
 
   // --- Shree Kadak Brand ---
   { id: 13, title: "Shree Kadak", name: "Shree Kadak Masala Chai 1kg", description: "Masala Blend | 1kg Pack | 400 Cups", price: 1150, originalPrice: 1400, rating: 4.9, reviews: 1540, image: "/ctc1kg.jpg", category: "masala-tea" },
-  { id: 14, title: "Shree Kadak", name: "Shree Kadak Masala Chai 500g", description: "Masala Blend | 500g Pack | 200 Cups", price: 620, originalPrice: 800, rating: 4.8, reviews: 920, image: "/shree-kadak-masala-chai-500g.jpg", category: "masala-tea" },
-  { id: 15, title: "Shree Kadak", name: "Shree Kadak Masala Chai 250g", description: "Masala Blend | 250g Pack | 100 Cups", price: 340, originalPrice: 430, rating: 4.7, reviews: 450, image: "/shree-kadak-masala-chai-250g.jpg", category: "masala-tea" },
-  { id: 16, title: "Shree Kadak", name: "Shree Kadak Masala Chai 100g", description: "Masala Blend | 100g Pack | 40 Cups", price: 170, originalPrice: 220, rating: 4.6, reviews: 210, image: "/shree-kadak-masala-chai-100g.jpg", category: "masala-tea" },
+  { id: 14, title: "Shree Kadak", name: "Shree Kadak Masala Chai 500g", description: "Masala Blend | 500g Pack | 200 Cups", price: 620, originalPrice: 800, rating: 4.8, reviews: 920, image: "/ctc1kg.jpg", category: "masala-tea" },
+  { id: 15, title: "Shree Kadak", name: "Shree Kadak Masala Chai 250g", description: "Masala Blend | 250g Pack | 100 Cups", price: 340, originalPrice: 430, rating: 4.7, reviews: 450, image: "/ctc1kg.jpg", category: "masala-tea" },
+  { id: 16, title: "Shree Kadak", name: "Shree Kadak Masala Chai 100g", description: "Masala Blend | 100g Pack | 40 Cups", price: 170, originalPrice: 220, rating: 4.6, reviews: 210, image: "/ctc1kg.jpg", category: "masala-tea" },
+
+  { id: 17, title: "MP", name: "Mast Punjabi Chai 1kg", description: "Masala Blend | 1kg Pack | 400 Cups", price: 1150, originalPrice: 1400, rating: 4.9, reviews: 1540, image: "/ctckg.jpg", category: "masala-tea" },
+  { id: 18, title: "MP", name: "Mast Punjabi Chai 500g", description: "Masala Blend | 500g Pack | 200 Cups", price: 620, originalPrice: 800, rating: 4.8, reviews: 920, image: "/shree-kadak-masala-chai-500g.jpg", category: "masala-tea" },
+  { id: 19, title: "MP", name: "Mast Punjabi Chai 250g", description: "Masala Blend | 250g Pack | 100 Cups", price: 340, originalPrice: 430, rating: 4.7, reviews: 450, image: "/mp250g.jpg", category: "masala-tea" },
+  { id: 20, title: "MP", name: "Mast Punjabi Chai 100g", description: "Masala Blend | 100g Pack | 40 Cups", price: 170, originalPrice: 220, rating: 4.6, reviews: 210, image: "/shree-kadak-masala-chai-100g.jpg", category: "masala-tea" },
+  
+  //upcoming
+  { id: 21, title: "upcoming", name: "Green Tea 1kg", description: "Masala Blend | 1kg Pack | 400 Cups", price: 1150, originalPrice: 1400, rating: 4.9, reviews: 1540, image: "/green1kg.jpg", category: "masala-tea" },
+  { id: 22, title: "upcoming", name: "Masala Tea 1kg", description: "Masala Blend | 500g Pack | 200 Cups", price: 620, originalPrice: 800, rating: 4.8, reviews: 920, image: "/masala1kg.jpg", category: "masala-tea" },
+  { id: 23, title: "upcoming", name: "Lemon Tea 1kg", description: "Masala Blend | 250g Pack | 100 Cups", price: 340, originalPrice: 430, rating: 4.7, reviews: 450, image: "/lemon1kg.jpg", category: "masala-tea" },
+  { id: 24, title: "upcoming", name: "Black Tea 1kg", description: "Masala Blend | 100g Pack | 40 Cups", price: 170, originalPrice: 220, rating: 4.6, reviews: 210, image: "/black1kg.jpg", category: "masala-tea" },
 ]
 
 export function ShopAllProducts() {
@@ -76,6 +100,8 @@ export function ShopAllProducts() {
     RR: useRef<HTMLDivElement>(null),
     UP_Divine: useRef<HTMLDivElement>(null),
     "Shree Kadak": useRef<HTMLDivElement>(null),
+    MP: useRef<HTMLDivElement>(null),
+    upcoming: useRef<HTMLDivElement>(null),
   }
 
   useEffect(() => {
@@ -136,7 +162,7 @@ export function ShopAllProducts() {
 
                 <div>
                   <h4 className="text-lg font-medium text-gray-800 mb-4">Brand</h4>
-                  {["All", "AM", "RR", "UP_Divine", "Shree Kadak"].map((brand) => (
+                  {["All", "AM", "RR", "UP_Divine", "Shree Kadak","MP"].map((brand) => (
                     <label key={brand} className="flex items-center mb-2 cursor-pointer">
                       <input
                         type="radio"
@@ -151,7 +177,7 @@ export function ShopAllProducts() {
 
                  <div>
                   <h4 className="text-lg font-medium text-gray-800 mb-4"> Upcoming Brand</h4>
-                  {["Black Tea", "Green Tea", "Red Tree"].map((brand) => (
+                  {["Black Tea", "Green Tea", "Lemon Tea","Masala Tea"].map((brand) => (
                     <label key={brand} className="flex items-center mb-2 cursor-pointer">
                       <input
                         type="radio"
@@ -168,15 +194,20 @@ export function ShopAllProducts() {
 
             {/* Products */}
             <div className="lg:w-3/4">
-              {["AM", "RR", "UP_Divine", "Shree Kadak"].map((brand) => {
+              {["AM", "RR", "UP_Divine", "Shree Kadak","MP","upcoming"].map((brand) => {
                 const brandProducts = currentProducts.filter((p) => p.title === brand)
                 if (brandProducts.length === 0) return null
 
                 return (
                   <div key={brand} ref={brandRefs[brand as keyof typeof brandRefs]} className="mb-16">
-                    <h2 className="text-3xl font-bold text-amber-700 mb-8 border-b-2 border-amber-700 text-center pb-2">
-  {brandHeadings[brand]}
-</h2>
+                   <div className="flex justify-center mb-8">
+  <img
+    src={brandImages[brand]}
+    alt={brandHeadings[brand]}
+    className="w-full max-w-3xl rounded-lg shadow-md object-cover"
+  />
+</div>
+
 
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
