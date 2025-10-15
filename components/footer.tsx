@@ -98,17 +98,17 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/privacy" className="hover:underline">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/returnPolicy" className="hover:underline">
                   Return Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/termsCondition" className="hover:underline">
                   Terms & Conditions
                 </a>
               </li>
