@@ -1,4 +1,4 @@
-import { Header } from "@/components/Header"
+import Header from "@/components/Header"
 import BulkShopping from "@/components/BulkShopping";
 import Footer from "@/components/footer"
 

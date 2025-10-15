@@ -1,4 +1,4 @@
-import { Header } from "@/components/HeaderAdmin";
+import { HeaderAdmin } from "@/components/HeaderAdmin";
 import Footer from "@/components/footer";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ export const metadata = {
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white text-gray-800">
-      <Header />
+      <HeaderAdmin />
 
       {/* ✅ Top Banner Section */}
       <div className="relative w-full h-64 mt-15">
@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
       </div>
 
       {/* ✅ Content Section */}
-      <div className="max-w-8xl mx-auto p-6 leading-7">
+      <div className="max-w-.tsxl mx-auto p-6 leading-7">
         <h2 className="text-xl font-semibold mt-6 mb-2">Who we are</h2>
         <p>Our website address is: <b>dryfruithouse.com</b></p>
 

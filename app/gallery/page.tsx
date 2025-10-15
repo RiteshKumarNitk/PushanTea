@@ -1,4 +1,4 @@
-import { Header } from "@/components/Header"
+import Header from "@/components/Header"
 import { GalleryContent } from "@/components/gallery-content"
 
 export default function GalleryPage() {

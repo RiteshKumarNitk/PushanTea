@@ -1,4 +1,4 @@
-import { Header } from "@/components/Header"
+import Header from "@/components/Header"
 import { AboutContent } from "@/components/about-content"
 
 export default function AboutPage() {

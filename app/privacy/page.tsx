@@ -1,4 +1,4 @@
-import { Header } from "@/components/Header";
+import Header from "@/components/Header";
 import PrivacyPolicy from "@/components/privacy"; // ✅ Our privacy component
 import Footer from "@/components/footer";
 
