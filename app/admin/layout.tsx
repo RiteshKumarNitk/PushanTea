@@ -1,17 +1,37 @@
-"use client"
-import { AdminSidebar } from "@/components/admin-sidebar"
+'use client'
 
-export default function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+import { usePathname } from 'next/navigation';
+import withAuth from '@/components/withAuth';
+import SideNav from '@/components/SideNav';
+import Header from '@/components/Header';
+import { Toaster } from '@/components/ui/toaster';
+
+// This is the actual layout for protected admin pages
+function ProtectedAdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen bg-gray-100">
-      <AdminSidebar />
-      <main className="flex-1 p-8">
-        {children}
-      </main>
+    <div className="min-h-screen w-full bg-white text-black flex">
+      <SideNav />
+      <div className="w-full flex flex-col">
+        <Header />
+        <main className="flex-1 p-4 md:p-6 lg:p-8">{children}</main>
+      </div>
+      <Toaster />
     </div>
-  )
+  );
+}
+
+// Wrap it with the authentication HOC
+const AuthenticatedLayout = withAuth(ProtectedAdminLayout);
+
+// This is the root layout for the /admin segment
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
+  // If the user is on the login page, don't render the protected layout
+  if (pathname === '/admin/login') {
+    return <>{children}</>;
+  }
+
+  // For all other pages under /admin, render the authenticated layout
+  return <AuthenticatedLayout>{children}</AuthenticatedLayout>;
 }
