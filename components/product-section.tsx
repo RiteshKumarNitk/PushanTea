@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Star } from "lucide-react"
+import Link from "next/link"
+
 
 const products = [
   {
@@ -153,9 +155,11 @@ export function ProductSection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <Button variant="outline" size="lg" className="px-8 bg-transparent">
-            VIEW ALL
-          </Button>
+          <Link href="/shop">
+  <Button variant="outline" size="lg" className="px-8 bg-transparent">
+    VIEW ALL
+  </Button>
+</Link>
         </motion.div>
       </div>
     </section>
