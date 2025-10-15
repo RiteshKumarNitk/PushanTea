@@ -1,6 +1,13 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
 
+export async function generateStaticParams() {
+  // In a real application, you would fetch user data and return an array of
+  // objects with the `userId` parameter. For this example, we'll return an
+  // empty array to resolve the build error.
+  return []
+}
+
 export default function AdminMemberCartPage({ params }: { params: { userId: string } }) {
   return (
     <div>

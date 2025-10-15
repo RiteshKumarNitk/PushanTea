@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import withAuth from '@/components/withAuth';
 import SideNav from '@/components/SideNav';
-import Header from '@/components/Header';
+import { Header } from '@/components/header';
 import { Toaster } from '@/components/ui/toaster';
 
 // This is the actual layout for protected admin pages
