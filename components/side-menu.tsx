@@ -106,7 +106,7 @@ export function SideMenu({ isOpen, onClose }: SideMenuProps) {
               </div>
 
               {/* Tea Categories */}
-              <div className="mb-8">
+              {/* <div className="mb-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   Tea Categories
                 </h3>
@@ -128,7 +128,7 @@ export function SideMenu({ isOpen, onClose }: SideMenuProps) {
                     </Link>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Contact Info */}
               <div className="border-t pt-6">

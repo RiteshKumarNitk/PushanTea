@@ -98,6 +98,14 @@ export function CategorySection() {
 
   return (
     <section className="bg-gradient-to-b from-white to-amber-50/30">
+
+       <div className="w-full">
+        <img
+          src="/lastimage.jpg"
+          alt="Pushan Tea Team"
+          className="w-full"
+        />
+      </div>
       {/* ======= Category Section ======= */}
       <div className="py-16 container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

@@ -43,16 +43,16 @@ export function TestimonialSection() {
         <Slider {...settings}>
           {testimonials.map((t) => (
             <div key={t.id} className="px-2">
-              <Card className="h-full p-6 bg-white border border-green-200 rounded-lg">
+              <Card className="h-full p-6 bg-white border rounded-lg">
                 <div className="mb-4">
-                  <Quote className="w-8 h-8 text-green-900" />
+                  <Quote className="w-8 h-8 text-amber-900" />
                 </div>
-                <blockquote className="text-green-900 mb-6 leading-relaxed">“{t.quote}”</blockquote>
+                <blockquote className="text-black mb-6 leading-relaxed">“{t.quote}”</blockquote>
                 <div className="flex items-center space-x-4">
-                  <img src={t.image} alt={t.name} className="w-16 h-16 rounded-full object-cover border-2 border-green-200" />
+                  <img src={t.image} alt={t.name} className="w-16 h-16 rounded-full object-cover border-2 " />
                   <div>
-                    <h4 className="font-semibold text-green-900">{t.name}</h4>
-                    <p className="text-sm text-green-700">{t.title}</p>
+                    <h4 className="font-semibold text-black">{t.name}</h4>
+                    <p className="text-sm text-black">{t.title}</p>
                   </div>
                 </div>
               </Card>

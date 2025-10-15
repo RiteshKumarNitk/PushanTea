@@ -145,6 +145,7 @@ export function HeroSection() {
         </motion.div>
       </div>
 
+
       {/* Scrolling Stats */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -173,6 +174,8 @@ export function HeroSection() {
           </div>
         </div>
       </motion.div>
+
+     
     </section>
   );
 }

@@ -36,12 +36,12 @@ const brandHeadings: Record<string, string> = {
 }
 
 const brandImages: Record<string, string> = {
-  AM: "/amscene.jpg",
-  RR: "/rrscene.jpg",
-  UP_Divine: "upscene.jpg",
-  "Shree Kadak": "/brands/shree-kadak-banner.jpg",
+  AM: "/amscene.png",
+  RR: "/rrscene.png",
+  UP_Divine: "upscene.png",
+  "Shree Kadak": "/ctc.png",
   MP: "/brands/mast-punjabi-banner.jpg",
-  upcoming: "/upcoming.jpg",
+  upcoming: "/upcoming.png",
 };
 
 
@@ -55,40 +55,36 @@ const brandStyles: Record<string, string> = {
 
 const products: Product[] = [
   // --- AM Brand ---
-  { id: 1, title: "AM", name: "AM Premium Green Tea 1kg", description: "Loose Leaf | 1kg Pack | 400 Cups", price: 1200, originalPrice: 1500, rating: 4.8, reviews: 980, image: "/am1kg.jpg", category: "green-tea" },
-  { id: 2, title: "AM", name: "AM Premium Green Tea 500g", description: "Loose Leaf | 500g Pack | 200 Cups", price: 650, originalPrice: 850, rating: 4.7, reviews: 510, image: "/am500g.jpg", category: "green-tea" },
-  { id: 3, title: "AM", name: "AM Premium Green Tea 250g", description: "Loose Leaf | 250g Pack | 100 Cups", price: 360, originalPrice: 480, rating: 4.6, reviews: 290, image: "/am250g.jpg", category: "green-tea" },
-  { id: 4, title: "AM", name: "AM Premium Green Tea 100g", description: "Loose Leaf | 100g Pack | 40 Cups", price: 160, originalPrice: 220, rating: 4.5, reviews: 120, image: "/am-premium-green-tea-100g.jpg", category: "green-tea" },
+  { id: 1, title: "AM", name: "250g Pack", description: "250g Pack", price: 360, originalPrice: 480, rating: 4.6, reviews: 290, image: "/am250g.jpg", category: "green-tea" },
+  { id: 2, title: "AM", name: "500g Pack", description: "500g Pack", price: 650, originalPrice: 850, rating: 4.7, reviews: 510, image: "/am500g.jpg", category: "green-tea" },
+  { id: 3, title: "AM", name: "1kg Pack", description: "1kg Pack", price: 1200, originalPrice: 1500, rating: 4.8, reviews: 980, image: "/am1kg.jpg", category: "green-tea" },
+  { id: 4, title: "AM", name: "Box Pack", description: "Box Pack", price: 160, originalPrice: 220, rating: 4.5, reviews: 120, image: "/ctc1kg.jpg", category: "green-tea" },
 
   // --- RR Brand ---
-  { id: 5, title: "RR", name: "RR Strong Assam Black Tea 1kg", description: "CTC Granules | 1kg Pack | 400 Cups", price: 1100, originalPrice: 1350, rating: 4.9, reviews: 1250, image: "/rr1kg.jpg", category: "black-tea" },
-  { id: 6, title: "RR", name: "RR Strong Assam Black Tea 500g", description: "CTC Granules | 500g Pack | 200 Cups", price: 580, originalPrice: 750, rating: 4.8, reviews: 830, image: "/rr500g.jpg", category: "black-tea" },
-  { id: 7, title: "RR", name: "RR Strong Assam Black Tea 250g", description: "CTC Granules | 250g Pack | 100 Cups", price: 320, originalPrice: 400, rating: 4.7, reviews: 460, image: "/rr250g.jpg", category: "black-tea" },
-  { id: 8, title: "RR", name: "RR Strong Assam Black Tea 100g", description: "CTC Granules | 100g Pack | 40 Cups", price: 150, originalPrice: 200, rating: 4.6, reviews: 200, image: "/rr-strong-assam-black-tea-100g.jpg", category: "black-tea" },
+  { id: 5, title: "RR", name: "250g Pack", description: "250g Pack", price: 320, originalPrice: 400, rating: 4.7, reviews: 460, image: "/rr250g.jpg", category: "black-tea" },
+  { id: 6, title: "RR", name: "500g Pack", description: "500g Pack", price: 580, originalPrice: 750, rating: 4.8, reviews: 830, image: "/rr500g.jpg", category: "black-tea" },
+  { id: 7, title: "RR", name: "1kg Pack", description: "1kg Pack", price: 1100, originalPrice: 1350, rating: 4.9, reviews: 1250, image: "/rr1kg.jpg", category: "black-tea" },
+  { id: 8, title: "RR", name: "Box Pack", description: "Box Pack", price: 150, originalPrice: 200, rating: 4.6, reviews: 200, image: "/ctc1kg.jpg", category: "black-tea" },
 
-  // --- UP_Divine Brand ---
-  { id: 9, title: "UP_Divine", name: "UP Divine Herbal Tea 1kg", description: "Herbal Blend | 1kg Pack | 400 Cups", price: 1300, originalPrice: 1600, rating: 4.9, reviews: 1120, image: "/up1kg.jpg", category: "herbal-tea" },
-  { id: 10, title: "UP_Divine", name: "UP Divine Herbal Tea 500g", description: "Herbal Blend | 500g Pack | 200 Cups", price: 700, originalPrice: 880, rating: 4.8, reviews: 670, image: "/up500g.jpg", category: "herbal-tea" },
-  { id: 11, title: "UP_Divine", name: "UP Divine Herbal Tea 250g", description: "Herbal Blend | 250g Pack | 100 Cups", price: 380, originalPrice: 480, rating: 4.7, reviews: 320, image: "/up-divine-herbal-tea-250g.jpg", category: "herbal-tea" },
-  { id: 12, title: "UP_Divine", name: "UP Divine Herbal Tea 100g", description: "Herbal Blend | 100g Pack | 40 Cups", price: 180, originalPrice: 230, rating: 4.6, reviews: 180, image: "/up-divine-herbal-tea-100g.jpg", category: "herbal-tea" },
+  // --- UP Divine Brand ---
+  { id: 9, title: "UP_Divine", name: "250g Pack", description: "250g Pack", price: 380, originalPrice: 480, rating: 4.7, reviews: 320, image: "/up250g.jpg", category: "herbal-tea" },
+  { id: 10, title: "UP_Divine", name: "500g Pack", description: "500g Pack", price: 700, originalPrice: 880, rating: 4.8, reviews: 670, image: "/up500g.jpg", category: "herbal-tea" },
+  { id: 11, title: "UP_Divine", name: "1kg Pack", description: "1kg Pack", price: 1300, originalPrice: 1600, rating: 4.9, reviews: 1120, image: "/up1kg.jpg", category: "herbal-tea" },
+  { id: 12, title: "UP_Divine", name: "Box Pack", description: "Box Pack", price: 180, originalPrice: 230, rating: 4.6, reviews: 180, image: "/ctc1kg.jpg", category: "herbal-tea" },
 
   // --- Shree Kadak Brand ---
-  { id: 13, title: "Shree Kadak", name: "Shree Kadak Masala Chai 1kg", description: "Masala Blend | 1kg Pack | 400 Cups", price: 1150, originalPrice: 1400, rating: 4.9, reviews: 1540, image: "/ctc1kg.jpg", category: "masala-tea" },
-  { id: 14, title: "Shree Kadak", name: "Shree Kadak Masala Chai 500g", description: "Masala Blend | 500g Pack | 200 Cups", price: 620, originalPrice: 800, rating: 4.8, reviews: 920, image: "/ctc1kg.jpg", category: "masala-tea" },
-  { id: 15, title: "Shree Kadak", name: "Shree Kadak Masala Chai 250g", description: "Masala Blend | 250g Pack | 100 Cups", price: 340, originalPrice: 430, rating: 4.7, reviews: 450, image: "/ctc1kg.jpg", category: "masala-tea" },
-  { id: 16, title: "Shree Kadak", name: "Shree Kadak Masala Chai 100g", description: "Masala Blend | 100g Pack | 40 Cups", price: 170, originalPrice: 220, rating: 4.6, reviews: 210, image: "/ctc1kg.jpg", category: "masala-tea" },
+  { id: 13, title: "Shree Kadak", name: "250g Pack", description: "250g Pack", price: 340, originalPrice: 430, rating: 4.7, reviews: 450, image: "/ctc1kg.jpg", category: "masala-tea" },
+  { id: 14, title: "Shree Kadak", name: "500g Pack", description: "500g Pack", price: 620, originalPrice: 800, rating: 4.8, reviews: 920, image: "/ctc1kg.jpg", category: "masala-tea" },
+  { id: 15, title: "Shree Kadak", name: "1kg Pack", description: "1kg Pack", price: 1150, originalPrice: 1400, rating: 4.9, reviews: 1540, image: "/ctc1kg.jpg", category: "masala-tea" },
+  { id: 16, title: "Shree Kadak", name: "Box Pack", description: "Box Pack", price: 170, originalPrice: 220, rating: 4.6, reviews: 210, image: "/ctcbox.jpg", category: "masala-tea" },
 
-  { id: 17, title: "MP", name: "Mast Punjabi Chai 1kg", description: "Masala Blend | 1kg Pack | 400 Cups", price: 1150, originalPrice: 1400, rating: 4.9, reviews: 1540, image: "/ctckg.jpg", category: "masala-tea" },
-  { id: 18, title: "MP", name: "Mast Punjabi Chai 500g", description: "Masala Blend | 500g Pack | 200 Cups", price: 620, originalPrice: 800, rating: 4.8, reviews: 920, image: "/shree-kadak-masala-chai-500g.jpg", category: "masala-tea" },
-  { id: 19, title: "MP", name: "Mast Punjabi Chai 250g", description: "Masala Blend | 250g Pack | 100 Cups", price: 340, originalPrice: 430, rating: 4.7, reviews: 450, image: "/mp250g.jpg", category: "masala-tea" },
-  { id: 20, title: "MP", name: "Mast Punjabi Chai 100g", description: "Masala Blend | 100g Pack | 40 Cups", price: 170, originalPrice: 220, rating: 4.6, reviews: 210, image: "/shree-kadak-masala-chai-100g.jpg", category: "masala-tea" },
-  
-  //upcoming
-  { id: 21, title: "upcoming", name: "Green Tea 1kg", description: "Masala Blend | 1kg Pack | 400 Cups", price: 1150, originalPrice: 1400, rating: 4.9, reviews: 1540, image: "/green1kg.jpg", category: "masala-tea" },
-  { id: 22, title: "upcoming", name: "Masala Tea 1kg", description: "Masala Blend | 500g Pack | 200 Cups", price: 620, originalPrice: 800, rating: 4.8, reviews: 920, image: "/masala1kg.jpg", category: "masala-tea" },
-  { id: 23, title: "upcoming", name: "Lemon Tea 1kg", description: "Masala Blend | 250g Pack | 100 Cups", price: 340, originalPrice: 430, rating: 4.7, reviews: 450, image: "/lemon1kg.jpg", category: "masala-tea" },
-  { id: 24, title: "upcoming", name: "Black Tea 1kg", description: "Masala Blend | 100g Pack | 40 Cups", price: 170, originalPrice: 220, rating: 4.6, reviews: 210, image: "/black1kg.jpg", category: "masala-tea" },
+  // --- Upcoming ---
+  { id: 17, title: "upcoming", name: "250g Pack", description: " 1kg Pack", price: 340, originalPrice: 430, rating: 4.7, reviews: 450, image: "/lemon1kg.jpg", category: "masala-tea" },
+  { id: 18, title: "upcoming", name: "500g Pack", description: "1kg Pack", price: 620, originalPrice: 800, rating: 4.8, reviews: 920, image: "/masala1kg.jpg", category: "masala-tea" },
+  { id: 19, title: "upcoming", name: "1kg Pack", description: "1kg Pack", price: 1150, originalPrice: 1400, rating: 4.9, reviews: 1540, image: "/green1kg.jpg", category: "masala-tea" },
+  { id: 20, title: "upcoming", name: "Box Pack", description: "1kg Pack", price: 170, originalPrice: 220, rating: 4.6, reviews: 210, image: "/black1kg.jpg", category: "masala-tea" }
 ]
+
 
 export function ShopAllProducts() {
   const [priceRange, setPriceRange] = useState([0, 3000])
@@ -123,14 +119,21 @@ export function ShopAllProducts() {
 
   return (
     <div className="min-h-screen">
-      <div className="bg-[#00492C] pt-20 pb-8">
-        <div className="text-center mb-12">
+       <div className="pt-15">
+    <img
+      src="/order.jpg"
+      alt="Contact"
+      className="w-full"
+    />
+  </div>
+      <div className="">
+        {/* <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-amber-700 mb-4">All Products</h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Explore our signature tea collections across premium brands.
             </p>
         <div className="container mx-auto px-4"></div>
-      </div>
+      </div> */}
 
       <div className="bg-white py-12">
         <div className="container mx-auto">
@@ -138,7 +141,7 @@ export function ShopAllProducts() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
-            {/* Sidebar */}
+            {/* Sidebar
             <div className="lg:w-1/4">
               <div className="bg-white border border-gray-200 rounded-lg p-6 sticky top-24">
                 <h3 className="text-xl font-semibold text-gray-900 mb-6">Filters</h3>
@@ -190,10 +193,10 @@ export function ShopAllProducts() {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Products */}
-            <div className="lg:w-3/4">
+            <div className="lg:w-full pt-5">
               {["AM", "RR", "UP_Divine", "Shree Kadak","MP","upcoming"].map((brand) => {
                 const brandProducts = currentProducts.filter((p) => p.title === brand)
                 if (brandProducts.length === 0) return null
@@ -204,7 +207,7 @@ export function ShopAllProducts() {
   <img
     src={brandImages[brand]}
     alt={brandHeadings[brand]}
-    className="w-full max-w-3xl rounded-lg shadow-md object-cover"
+    className="w-full  rounded-lg shadow-md object-cover"
   />
 </div>
 

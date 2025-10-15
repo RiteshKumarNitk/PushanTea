@@ -5,8 +5,8 @@ import { ProductSection } from "@/components/product-section"
 import { TestimonialSection } from "@/components/testimonial-section"
 import { StorySection } from "@/components/story-section"
 import { EnvironmentalSection } from "@/components/environmental-section"
-import { Footer } from "@/components/footer"
-import { Contact } from "@/components/contact"
+import  { Footer }  from "@/components/footer"
+// import { Contact } from "@/components/Contact"
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <CategorySection />
       {/* <ProductSection /> */}
       <TestimonialSection />
-      <StorySection />
+      {/* <StorySection /> */}
       <EnvironmentalSection />
       {/* <Contact /> */}
       <Footer />
