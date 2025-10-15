@@ -1,4 +1,4 @@
-import { Header } from "@/components/header";
+import { Header } from "@/components/HeaderAdmin";
 import Footer from "@/components/footer";
 import Image from "next/image";
 

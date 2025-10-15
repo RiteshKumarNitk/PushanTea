@@ -8,7 +8,7 @@ import { SideMenu } from "./side-menu"
 import Link from "next/link"
 import { CartDrawer } from "./cart-drawer"
 
-export function Header() {
+export function HeaderAdmin() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)

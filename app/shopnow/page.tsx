@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { Header } from "@/components/Header"
 import { ShopAllProductss } from "@/components/shop-all-productss"
 
 export default function ShopNowPage() {
