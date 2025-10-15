@@ -1,140 +1,210 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
 
-export function Contact() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    product: "",
-    quantity: "",
-    location: "",
-    message: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // You can send data to API here
-  };
-
+export default function Contact() {
   return (
-    <div className="min-h-screen bg-[#f9f8f3] flex items-center justify-center p-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl">
+    <div className="bg-gray-50">
+  {/* ✅ Full Width Banner Image */}
+  <div className="w-full pt-15">
+    <img
+      src="/contact.jpg"
+      alt="Contact"
+      className="w-full"
+    />
+  </div>
 
-        {/* Left Section - Contact Info */}
-        <div className="bg-white rounded-2xl shadow-md p-6 space-y-4">
-          <h2 className="text-xl font-semibold">Visit Our Factory</h2>
+      {/* ✅ Get In Touch Section */}
+      <section className="max-w-4xl mx-auto text-center py-12 px-6">
+        <h2 className="text-3xl font-semibold text-[#5a1a1a] mb-4">
+          Get In Touch
+        </h2>
+        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+          We are here to help our customers all over the world. We would be
+          happy to assist you.
+          <br />
+          So let us know what your queries are or what you are looking for — we
+          will get back to you shortly.
+        </p>
+      </section>
 
-          <div className="space-y-2">
-            <p className="flex items-center gap-2">
-              📞 <span className="text-gray-700">+91-97999 98662</span>
-            </p>
-            <p className="flex items-center gap-2">
-              📧 <span className="text-gray-700">pushaan@greenleaftea.com</span>
-            </p>
-            <p className="flex items-center gap-2">
-              📍 <span className="text-gray-700">
-                A12, Rd No 3, near evening news, Sudarshanpura, Bais Godam, Jaipur, Rajasthan 302006
-              </span>
-            </p>
+      {/* ✅ Contact Section */}
+      <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden lg:flex mb-16">
+        {/* Left: Contact Info */}
+        <div className="bg-[#5a1a1a] text-white p-8 lg:w-1/3 flex flex-col justify-between">
+          <div>
+            <h2 className="text-3xl font-semibold mb-6">Contact Details</h2>
+
+            {/* Phone */}
+            <div className="flex items-start mb-6">
+              <Phone className="w-6 h-6 mr-3 mt-1 text-red-300" />
+              <div>
+                <p className="font-semibold">Reach us on call/WhatsApp</p>
+                <p>+91-97999 98662</p>
+              </div>
+            </div>
+
+            {/* Email */}
+            <h3 className="text-xl font-semibold mt-8 mb-4 border-b border-red-800 pb-2">
+              Email Address
+            </h3>
+            <div className="flex items-start mb-6">
+              <Mail className="w-6 h-6 mr-3 mt-1 text-red-300" />
+              <p>pushaan@greenleaftea.com</p>
+            </div>
+
+            {/* Location */}
+            <h3 className="text-xl font-semibold mt-8 mb-4 border-b border-red-800 pb-2">
+              Office Location
+            </h3>
+            <div className="flex items-start mb-6">
+              <MapPin className="w-6 h-6 mr-3 mt-1 text-red-300 flex-shrink-0" />
+              <p className="text-sm leading-relaxed">
+                A12, Rd No 3, near evening news, Sudarshanpura,
+                <br />
+                Bais Godam, Jaipur, 
+                <br />
+                Rajasthan 302006
+              </p>
+            </div>
           </div>
 
-          <div className="rounded-xl overflow-hidden mt-4">
-            <iframe
-              // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.92286199222!2d75.76904367436865!3d26.87676936193684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db40b6a3ad8b9%3A0x5d8a68164c6be4f!2sPushaan%20Tradelink%20(P.)%20Ltd.!5e0!3m2!1sen!2sin!4v1694871000000!5m2!1sen!2sin"
-             src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d86728.94481301703!2d75.7147652!3d26.8999862!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x396db43d861e3ceb%3A0x7b70a1cc9bd2914a!2sA12%2C%20Rd%20No%203%2C%20near%20evening%20news%2C%20Sudarshanpura%2C%20Bais%20Godam%2C%20Jaipur%2C%20Rajasthan%20302006!3m2!1d26.8949592!2d75.7915256!5e1!3m2!1sen!2sin!4v1759572309464!5m2!1sen!2sin"
-              width="100%"
-              height="250"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
+          {/* Social Links */}
+          <div>
+            <h3 className="text-xl font-semibold mt-10 mb-4">Follow Us</h3>
+            <div className="flex space-x-4">
+              <a
+                href="#"
+                className="p-2 border border-white rounded-full hover:bg-white hover:text-[#5a1a1a] transition duration-300"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="p-2 border border-white rounded-full hover:bg-white hover:text-[#5a1a1a] transition duration-300"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="p-2 border border-white rounded-full hover:bg-white hover:text-[#5a1a1a] transition duration-300"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="p-2 border border-white rounded-full hover:bg-white hover:text-[#5a1a1a] transition duration-300"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Right Section - Form */}
-        <div className="bg-white rounded-2xl shadow-md p-6">
-          <h2 className="text-xl font-semibold mb-4">Book a Factory Visit / Send Inquiry</h2>
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                name="fullName"
-                placeholder="Full Name"
-                value={formData.fullName}
-                onChange={handleChange}
-                className="border rounded-md px-3 py-2 w-full"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleChange}
-                className="border rounded-md px-3 py-2 w-full"
-              />
+        {/* Right: Contact Form */}
+        <div className="p-8 lg:w-2/3">
+          <form className="space-y-6">
+            {/* Name + Mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your Name"
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#5a1a1a] focus:border-[#5a1a1a] sm:text-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="mobile"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Mobile No. *
+                </label>
+                <input
+                  type="tel"
+                  id="mobile"
+                  placeholder="Mobile No."
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#5a1a1a] focus:border-[#5a1a1a] sm:text-sm"
+                  required
+                />
+              </div>
             </div>
 
-            <input
-              type="text"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              className="border rounded-md px-3 py-2 w-full"
-            />
+            {/* Email + Subject */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Email Id *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email Id"
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#5a1a1a] focus:border-[#5a1a1a] sm:text-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="Subject"
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#5a1a1a] focus:border-[#5a1a1a] sm:text-sm"
+                />
+              </div>
+            </div>
 
-            <select
-              name="product"
-              value={formData.product}
-              onChange={handleChange}
-              className="border rounded-md px-3 py-2 w-full"
-            >
-              <option value="">Select Product</option>
-              <option value="Green Tea">Green Tea</option>
-              <option value="Black Tea">Black Tea</option>
-              <option value="Herbal Tea">Herbal Tea</option>
-            </select>
+            {/* Message */}
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Write Your Message *
+              </label>
+              <textarea
+                id="message"
+                placeholder="Write Your Message"
+                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#5a1a1a] focus:border-[#5a1a1a] sm:text-sm h-32 resize-none"
+                required
+              ></textarea>
+            </div>
 
-            <input
-              type="text"
-              name="quantity"
-              placeholder="Required Quantity (e.g., 500kg)"
-              value={formData.quantity}
-              onChange={handleChange}
-              className="border rounded-md px-3 py-2 w-full"
-            />
-
-            <input
-              type="text"
-              name="location"
-              placeholder="Delivery Location"
-              value={formData.location}
-              onChange={handleChange}
-              className="border rounded-md px-3 py-2 w-full"
-            />
-
-            <textarea
-              name="message"
-              placeholder="Additional Instructions / Inquiry"
-              value={formData.message}
-              onChange={handleChange}
-              rows={3}
-              className="border rounded-md px-3 py-2 w-full"
-            ></textarea>
-
-            <button
-              type="submit"
-              className="bg-[#a25a00] hover:bg-[#844600] text-white w-full py-2 rounded-md transition"
-            >
-              Submit
-            </button>
+            {/* Submit */}
+            <div className="pt-4">
+              <button
+                type="submit"
+                className="w-full md:w-auto px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#5a1a1a] hover:bg-[#4d1616] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5a1a1a]"
+              >
+                Send Message
+              </button>
+            </div>
           </form>
         </div>
       </div>
