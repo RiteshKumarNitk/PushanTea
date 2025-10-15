@@ -6,7 +6,6 @@ import SideNav from '@/components/SideNav';
 import Header from '@/components/Header';
 import { Toaster } from '@/components/ui/toaster';
 
-// This is the actual layout for protected admin pages
 function ProtectedAdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen w-full bg-white text-black flex">
@@ -20,18 +19,14 @@ function ProtectedAdminLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Wrap it with the authentication HOC
 const AuthenticatedLayout = withAuth(ProtectedAdminLayout);
 
-// This is the root layout for the /admin segment
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  // If the user is on the login page, don't render the protected layout
   if (pathname === '/admin/login') {
     return <>{children}</>;
   }
 
-  // For all other pages under /admin, render the authenticated layout
   return <AuthenticatedLayout>{children}</AuthenticatedLayout>;
 }
