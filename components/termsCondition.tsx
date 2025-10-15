@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 export const metadata = {
-  title: "Terms & Conditions | Dry Fruit House",
+  title: "Terms & Conditions | Pushan Tea",
   description:
-    "Read the terms and conditions of using Dry Fruit House’s website and services.",
+    "Read the terms and conditions of using Pushan Tea’s website and services.",
 };
 
 export default function TermsConditions() {
@@ -12,30 +12,29 @@ export default function TermsConditions() {
       {/* ✅ Top Banner Section */}
       <div className="relative w-full h-64 mt-15">
         <Image
-          src="/termCondition.jpg" // 👈 image path from public folder
+          src="/termCondition.jpg"
           alt="Terms & Conditions Banner"
           fill
           className="object-cover opacity-80"
           priority
         />
-        {/* ✅ Overlay text */}
       </div>
 
       {/* ✅ Content Section */}
       <div className="max-w-8xl mx-auto p-6 leading-7">
         <p>
-          This website is owned and managed by <b>Dry Fruit House</b>. By
-          accessing and using the www.dryfruithouse.com website (the “Website”),
-          you are agreeing to be legally bound by these Terms & Conditions. The
-          terms “You” and “User” refer to anyone who accesses the Website.
+          This website is owned and managed by <b>Pushan Tea</b>. By accessing
+          and using the www.pushantea.com website (the “Website”), you are
+          agreeing to be legally bound by these Terms & Conditions. The terms
+          “You” and “User” refer to anyone who accesses the Website.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">
           Changes to Terms & Conditions
         </h2>
         <p>
-          Dry Fruit House may change these Terms & Conditions at any time
-          without notice. Changes will be posted on the website under “Terms &
+          Pushan Tea may change these Terms & Conditions at any time without
+          notice. Changes will be posted on the website under “Terms &
           Conditions”. Your use of the Website after any changes have been
           posted will constitute your agreement to the modified Terms &
           Conditions.
@@ -43,7 +42,7 @@ export default function TermsConditions() {
 
         <h2 className="text-xl font-semibold mt-6 mb-2">Use of the Website</h2>
         <p>
-          Dry Fruit House grants you a non-exclusive, non-transferable, limited
+          Pushan Tea grants you a non-exclusive, non-transferable, limited
           license to access and use the Website for personal, non-commercial
           purposes. You agree not to copy, reproduce, or distribute any content
           without written permission.
@@ -76,7 +75,7 @@ export default function TermsConditions() {
         </h2>
         <p>
           We aim to deliver products promptly, but delays may occur due to
-          external factors. Dry Fruit House is not liable for such delays.
+          external factors. Pushan Tea is not liable for such delays.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">
@@ -91,23 +90,23 @@ export default function TermsConditions() {
           Limitation of Liability
         </h2>
         <p>
-          Your use of the Website is at your own risk. Dry Fruit House shall not
-          be liable for any damages arising out of the use of this Website.
+          Your use of the Website is at your own risk. Pushan Tea shall not be
+          liable for any damages arising out of the use of this Website.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">User Content</h2>
         <p>
-          Users grant Dry Fruit House a non-exclusive right to use materials
-          entered on the Website. Users agree to indemnify Dry Fruit House from
-          damages arising from misuse or breach.
+          Users grant Pushan Tea a non-exclusive right to use materials entered
+          on the Website. Users agree to indemnify Pushan Tea from damages
+          arising from misuse or breach.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">
           Fraudulent or Declined Transactions
         </h2>
         <p>
-          Dry Fruit House reserves the right to recover costs and legal fees
-          from individuals engaging in fraudulent activities.
+          Pushan Tea reserves the right to recover costs and legal fees from
+          individuals engaging in fraudulent activities.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">Non-Transferability</h2>
@@ -121,12 +120,12 @@ export default function TermsConditions() {
         </h2>
         <p>
           These Terms are governed by the laws of the Republic of India, and
-          courts at Bangalore, India, have exclusive jurisdiction.
+          courts at Jaipur, India, have exclusive jurisdiction.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">Miscellaneous</h2>
         <p>
-          Dry Fruit House may discontinue or change the Website at any time. No
+          Pushan Tea may discontinue or change the Website at any time. No
           employee has authority to alter these Terms.
         </p>
       </div>

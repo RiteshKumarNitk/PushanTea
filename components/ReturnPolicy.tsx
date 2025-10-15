@@ -43,7 +43,7 @@ export default function ReturnPolicy() {
         </ul>
 
         <p className="mt-4">
-          Customers must return the product(s) at their own cost and comply with Dry Fruit House staff directions
+          Customers must return the product(s) at their own cost and comply with Pushan Tea staff directions
           to facilitate a refund or exchange.
         </p>
 
@@ -53,9 +53,9 @@ export default function ReturnPolicy() {
         </p>
 
         <p className="mt-4">
-          After receiving the returned product(s), Dry Fruit House will issue a refund as soon as reasonably practicable,
+          After receiving the returned product(s), Pushan Tea will issue a refund as soon as reasonably practicable,
           and you will receive an email acknowledgement. Refunds will be processed by reversing the initial transaction.
-          Dry Fruit House is not responsible for delays caused by third-party payment gateways.
+          Pushan Tea is not responsible for delays caused by third-party payment gateways.
         </p>
       </div>
     </div>
