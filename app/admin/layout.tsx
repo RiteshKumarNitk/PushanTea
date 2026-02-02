@@ -4,7 +4,11 @@ import { usePathname } from 'next/navigation';
 import withAuth from '@/components/withAuth';
 import SideNav from '@/components/SideNav';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Header from '@/components/Header';
+=======
+import { HeaderAdmin } from '@/components/HeaderAdmin';
+>>>>>>> 7d0df943d536d488f1d31043d7343562e3b1c213
 import { Toaster } from '@/components/ui/toaster';
 
 // This is the actual layout for protected admin pages
@@ -18,7 +22,7 @@ function ProtectedAdminLayout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen w-full bg-white text-black flex">
       <SideNav />
       <div className="w-full flex flex-col">
-        <Header />
+        <HeaderAdmin />
         <main className="flex-1 p-4 md:p-6 lg:p-8">{children}</main>
       </div>
       <Toaster />

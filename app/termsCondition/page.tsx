@@ -1,4 +1,4 @@
-import { Header } from "@/components/header";
+import Header from "@/components/Header";
 import TermsCondition from "@/components/termsCondition"; // ✅ Correct import
 import Footer from "@/components/footer"; 
 

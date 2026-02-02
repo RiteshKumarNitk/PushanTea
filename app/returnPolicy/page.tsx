@@ -1,4 +1,4 @@
-import { Header } from "@/components/header";
+import Header from "@/components/Header";
 import ReturnPolicy from "@/components/ReturnPolicy"; // ✅ Our return policy component
 import Footer from "@/components/footer";
 

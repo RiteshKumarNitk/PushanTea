@@ -2,13 +2,13 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
 
-export default function AdminMemberCartPage({ params }: { params: { userId: string } }) {
+export default function AdminMemberCartPage() {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-8">User Cart Details</h1>
       <Card>
         <CardHeader>
-          <CardTitle>User: John Doe (ID: {params.userId})</CardTitle>
+          <CardTitle>User: John Doe</CardTitle>
         </CardHeader>
         <CardContent>
           <Table>

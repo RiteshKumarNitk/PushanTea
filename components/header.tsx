@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
@@ -8,7 +8,7 @@ import { SideMenu } from "./side-menu"
 import Link from "next/link"
 import { CartDrawer } from "./cart-drawer"
 
-export function Header() {
+export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
@@ -24,20 +24,22 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-white shadow-md ${isScrolled ? "shadow-lg" : ""
-          }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-white shadow-md ${
+          isScrolled ? "shadow-lg" : ""
+        }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-
-            <Link href="/" className="flex items-center shrink-0">
+            
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
               <motion.img
                 src="/logo2.png"
                 alt="PUSHAAN Logo"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="h-10 md:h-12 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
 
@@ -73,27 +75,6 @@ export function Header() {
                 <Menu className="h-5 w-5" />
               </Button>
 
-              {/* Search Icon */}
-              {/* <Button variant="ghost" size="icon" className="text-black">
-                <Search className="h-5 w-5" />
-              </Button> */}
-
-              {/* User Icon */}
-              {/* <Link href="/login">
-                <Button variant="ghost" size="icon" className="text-black">
-                  <User className="h-5 w-5" />
-                </Button>
-              </Link> */}
-
-              {/* Cart Icon */}
-              {/* <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsCartOpen(true)}
-                className="text-black"
-              >
-                <ShoppingCart className="h-5 w-5" />
-              </Button> */}
             </div>
           </div>
         </div>
