@@ -1,6 +1,5 @@
 'use client'
 
-<<<<<<< HEAD
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -10,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { useToast } from "@/components/ui/use-toast"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog"
-
+import withAuth from '@/components/withAuth'
 
 const initialOrders = [
   {
@@ -39,7 +38,7 @@ const initialOrders = [
   },
 ]
 
-export default function AdminOrdersPage() {
+function AdminOrdersPage() {
   const [orders, setOrders] = useState(initialOrders);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
@@ -51,17 +50,17 @@ export default function AdminOrdersPage() {
     setCurrentOrder(order);
     setIsModalOpen(true);
   };
-  
+
   const handleStatusChange = (orderId: string, newStatus: string) => {
     setOrders(orders.map(o => o.id === orderId ? { ...o, status: newStatus } : o));
     toast({ title: "Order Status Updated", description: "The order status has been successfully updated." });
   };
-  
+
   const handleDeleteOrder = (order: any) => {
     setOrderToDelete(order);
     setIsDeleteAlertOpen(true);
   };
-  
+
   const confirmDelete = () => {
     setOrders(orders.filter(o => o.id !== orderToDelete.id));
     toast({ title: "Order Deleted", description: "The order has been successfully deleted.", variant: "destructive" });
@@ -174,17 +173,5 @@ export default function AdminOrdersPage() {
     </div>
   )
 }
-=======
-import withAuth from '@/components/withAuth';
 
-function OrdersPage() {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold">Orders</h1>
-      <p>Here you can manage all the orders.</p>
-    </div>
-  );
-}
-
-export default withAuth(OrdersPage);
->>>>>>> main
+export default withAuth(AdminOrdersPage);
