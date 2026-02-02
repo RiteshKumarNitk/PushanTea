@@ -162,24 +162,31 @@ export function AboutContent() {
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto px-4">
             {milestones.map((milestone, index) => (
               <motion.div
                 key={milestone.year}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`flex items-center mb-8 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+                className={`flex flex-col md:flex-row items-center mb-12 relative ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
               >
-                <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
-                  <div className="bg-white p-6 rounded-lg shadow-md">
+                {/* Desktop Connection Line */}
+                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 -translate-x-1/2 -z-10" />
+
+                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12 md:text-left"}`}>
+                  <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                     <h3 className="text-2xl font-bold text-[#00492C] mb-2">{milestone.year}</h3>
                     <p className="text-gray-700">{milestone.event}</p>
                   </div>
                 </div>
-                <div className="w-4 h-4 bg-[#00492C] rounded-full border-4 border-white shadow-lg z-10"></div>
-                <div className="w-1/2"></div>
+
+                {/* Circle marker */}
+                <div className="hidden md:flex absolute left-1/2 w-4 h-4 bg-[#00492C] rounded-full border-4 border-white shadow-lg z-10 -translate-x-1/2 justify-center items-center" />
+
+                <div className="hidden md:block md:w-1/2" />
               </motion.div>
             ))}
           </div>

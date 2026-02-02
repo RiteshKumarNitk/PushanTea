@@ -1,5 +1,6 @@
 'use client'
 
+<<<<<<< HEAD
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -173,3 +174,17 @@ export default function AdminOrdersPage() {
     </div>
   )
 }
+=======
+import withAuth from '@/components/withAuth';
+
+function OrdersPage() {
+  return (
+    <div>
+      <h1 className="text-3xl font-bold">Orders</h1>
+      <p>Here you can manage all the orders.</p>
+    </div>
+  );
+}
+
+export default withAuth(OrdersPage);
+>>>>>>> main

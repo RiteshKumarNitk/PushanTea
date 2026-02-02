@@ -1,5 +1,6 @@
 'use client'
 
+<<<<<<< HEAD
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
@@ -136,3 +137,17 @@ export default function AdminDashboard() {
     </div>
   )
 }
+=======
+import withAuth from '@/components/withAuth';
+
+function AdminDashboard() {
+  return (
+    <div>
+      <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+      <p>Welcome to the admin dashboard!</p>
+    </div>
+  );
+}
+
+export default withAuth(AdminDashboard);
+>>>>>>> main

@@ -117,18 +117,18 @@ export default function AdminUsersPage() {
           </DialogHeader>
           {currentUser && (
             <div className="grid gap-4 py-4">
-                <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="name" className="text-right">Name</Label>
-                    <Input id="name" value={currentUser.name} onChange={(e) => setCurrentUser({ ...currentUser, name: e.target.value })} className="col-span-3" />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="email" className="text-right">Email</Label>
-                    <Input id="email" value={currentUser.email} onChange={(e) => setCurrentUser({ ...currentUser, email: e.target.value })} className="col-span-3" />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="joinDate" className="text-right">Join Date</Label>
-                    <Input id="joinDate" type="date" value={currentUser.joinDate} onChange={(e) => setCurrentUser({ ...currentUser, joinDate: e.target.value })} className="col-span-3" />
-                </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="name" className="text-right">Name</Label>
+                <Input id="name" value={currentUser.name} onChange={(e) => setCurrentUser({ ...currentUser, name: e.target.value })} className="col-span-3" />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="email" className="text-right">Email</Label>
+                <Input id="email" value={currentUser.email} onChange={(e) => setCurrentUser({ ...currentUser, email: e.target.value })} className="col-span-3" />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="joinDate" className="text-right">Join Date</Label>
+                <Input id="joinDate" type="date" value={currentUser.joinDate} onChange={(e) => setCurrentUser({ ...currentUser, joinDate: e.target.value })} className="col-span-3" />
+              </div>
             </div>
           )}
           <DialogFooter>

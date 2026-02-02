@@ -14,14 +14,14 @@ import {
 export default function Contact() {
   return (
     <div className="bg-gray-50">
-  {/* ✅ Full Width Banner Image */}
-  <div className="w-full pt-15">
-    <img
-      src="/contact.jpg"
-      alt="Contact"
-      className="w-full"
-    />
-  </div>
+      {/* ✅ Full Width Banner Image */}
+      <div className="w-full pt-15">
+        <img
+          src="/contact.jpg"
+          alt="Contact"
+          className="w-full"
+        />
+      </div>
 
       {/* ✅ Get In Touch Section */}
       <section className="max-w-4xl mx-auto text-center py-12 px-6">
@@ -37,10 +37,9 @@ export default function Contact() {
         </p>
       </section>
 
-      {/* ✅ Contact Section */}
-      <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden lg:flex mb-16">
+      <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden md:flex mb-16">
         {/* Left: Contact Info */}
-        <div className="bg-[#5a1a1a] text-white p-8 lg:w-1/3 flex flex-col justify-between">
+        <div className="bg-[#5a1a1a] text-white p-8 md:w-1/3 flex flex-col justify-between">
           <div>
             <h2 className="text-3xl font-semibold mb-6">Contact Details</h2>
 
@@ -71,7 +70,7 @@ export default function Contact() {
               <p className="text-sm leading-relaxed">
                 A12, Rd No 3, near evening news, Sudarshanpura,
                 <br />
-                Bais Godam, Jaipur, 
+                Bais Godam, Jaipur,
                 <br />
                 Rajasthan 302006
               </p>
@@ -111,7 +110,7 @@ export default function Contact() {
         </div>
 
         {/* Right: Contact Form */}
-        <div className="p-8 lg:w-2/3">
+        <div className="p-8 md:w-2/3">
           <form className="space-y-6">
             {/* Name + Mobile */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

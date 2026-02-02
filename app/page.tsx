@@ -5,7 +5,8 @@ import { ProductSection } from "@/components/product-section"
 import { TestimonialSection } from "@/components/testimonial-section"
 import { StorySection } from "@/components/story-section"
 import { EnvironmentalSection } from "@/components/environmental-section"
-import  { Footer }  from "@/components/footer"
+import { Footer } from "@/components/footer"
+import { FeaturesBar } from "@/components/features-bar"
 // import { Contact } from "@/components/Contact"
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <HeroSection />
+      <FeaturesBar />
       <CategorySection />
       {/* <ProductSection /> */}
       <TestimonialSection />
@@ -20,7 +22,7 @@ export default function Home() {
       <EnvironmentalSection />
       {/* <Contact /> */}
       <Footer />
-      
+
     </main>
   )
 }

@@ -1,19 +1,32 @@
 'use client'
 
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import useAuth from './useAuth';
 
-export default function withAuth(Component: any) {
-  return function AuthenticatedComponent(props: any) {
-    const router = useRouter()
+const withAuth = (WrappedComponent: React.ComponentType<any>) => {
+  const Wrapper = (props: any) => {
+    const router = useRouter();
+    const { user, loading } = useAuth();
 
     useEffect(() => {
-      const isAuthenticated = localStorage.getItem('isAuthenticated')
-      if (!isAuthenticated) {
-        router.push('/admin/login')
+      if (!loading && !user) {
+        router.replace('/admin/login');
       }
-    }, [router])
+    }, [user, loading, router]);
 
-    return <Component {...props} />
-  }
-}
+    if (loading || !user) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-white">
+          <div className="w-8 h-8 border-4 border-green-800 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      );
+    }
+
+    return <WrappedComponent {...props} />;
+  };
+
+  return Wrapper;
+};
+
+export default withAuth;

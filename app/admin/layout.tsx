@@ -3,10 +3,16 @@
 import { usePathname } from 'next/navigation';
 import withAuth from '@/components/withAuth';
 import SideNav from '@/components/SideNav';
+<<<<<<< HEAD
 import Header from '@/components/Header';
 import { Toaster } from '@/components/ui/toaster';
 
 // This is the actual layout for protected admin pages
+=======
+import { Header } from '@/components/header';
+import { Toaster } from '@/components/ui/toaster';
+
+>>>>>>> main
 function ProtectedAdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen w-full bg-white text-black flex">
@@ -20,6 +26,7 @@ function ProtectedAdminLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
+<<<<<<< HEAD
 // Wrap it with the authentication HOC
 const AuthenticatedLayout = withAuth(ProtectedAdminLayout);
 
@@ -28,10 +35,20 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
 
   // If the user is on the login page, don't render the protected layout
+=======
+const AuthenticatedLayout = withAuth(ProtectedAdminLayout);
+
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
+>>>>>>> main
   if (pathname === '/admin/login') {
     return <>{children}</>;
   }
 
+<<<<<<< HEAD
   // For all other pages under /admin, render the authenticated layout
+=======
+>>>>>>> main
   return <AuthenticatedLayout>{children}</AuthenticatedLayout>;
 }
