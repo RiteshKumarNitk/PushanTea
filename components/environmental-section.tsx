@@ -2,6 +2,13 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import dynamic from "next/dynamic"
+
+// Import leaflet map dynamically to avoid SSR issues
+const FranchiseeMap = dynamic(() => import("./franchisee-map").then((mod) => mod.default), {
+  ssr: false,
+  loading: () => <div className="w-full h-[420px] bg-gray-100 animate-pulse rounded-3xl" />
+});
 
 export function EnvironmentalSection() {
   return (
@@ -43,40 +50,28 @@ export function EnvironmentalSection() {
           </div>
         </motion.div>
 
-        {/* Rajasthan Footprint Section */}
+        {/* Franchisee Network Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12"
+          className="flex flex-col items-center justify-center gap-10"
         >
           {/* Text Section */}
-          <div className="md:w-1/2 text-center md:text-left">
-            <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
-              Our Rajasthan Footprint
+          <div className="w-full text-center max-w-4xl">
+            <h3 className="text-4xl md:text-5xl font-extrabold text-[#00492C] mb-6">
+              Our Franchisee Network
             </h3>
-            <p className="text-muted-foreground text-base md:text-lg mb-3 leading-relaxed">
-              PUSHAAN Tea has a growing presence across the rajasthan. Our factories and production units
-              are strategically located in key tea-growing regions to ensure quality and freshness.
-              This map highlights the locations of our main facilities, showing how we deliver
-              sustainable, high-quality tea from farm to cup.
-            </p>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-              Each facility follows strict sustainability and quality standards, ensuring our
-              environmental and social commitments are met wherever we operate.
+            <p className="text-muted-foreground text-lg md:text-xl mb-6 leading-relaxed">
+              Experience the PUSHAAN legacy at any of our outlets. We are rapidly expanding across mainland India
+              with a strong network of 150+ dedicated franchisees delivering field-fresh tea to your doorstep.
             </p>
           </div>
 
-          {/* Map Image */}
-          <div className="md:w-1/2">
-            <div className="relative w-full h-80 md:h-[420px] overflow-hidden rounded-3xl shadow-xl">
-              <img
-                src="/map.jpg"
-                alt="PUSHAAN Tea Factory Locations"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </div>
+          {/* Fully Enhanced Map - Now with more space */}
+          <div className="w-full h-[500px] md:h-[650px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 ring-1 ring-gray-200">
+            <FranchiseeMap />
           </div>
         </motion.div>
 
@@ -85,8 +80,8 @@ export function EnvironmentalSection() {
   )
 }
 
-{/* Header */}
-        {/* <motion.div
+{/* Header */ }
+{/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -104,7 +99,7 @@ export function EnvironmentalSection() {
         </motion.div>
 
         {/* Main Environmental Promise */}
-        {/* <motion.div
+{/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -153,8 +148,8 @@ export function EnvironmentalSection() {
           </div>
         </motion.div> */}
 
-        {/* Initiatives Grid */}
-        {/* <motion.div
+{/* Initiatives Grid */ }
+{/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -166,8 +161,8 @@ export function EnvironmentalSection() {
          
         </motion.div> */}
 
-        {/* Call to Action */}
-        {/* <motion.div
+{/* Call to Action */ }
+{/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}

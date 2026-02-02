@@ -24,22 +24,20 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-white shadow-md ${
-          isScrolled ? "shadow-lg" : ""
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-white shadow-md ${isScrolled ? "shadow-lg" : ""
+          }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            
-            {/* Logo */}
-            <Link href="/" className="flex items-center">
+
+            <Link href="/" className="flex items-center shrink-0">
               <motion.img
                 src="/logo2.png"
                 alt="PUSHAAN Logo"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="h-12 w-auto"
+                className="h-10 md:h-12 w-auto"
               />
             </Link>
 
@@ -81,11 +79,11 @@ export function Header() {
               </Button> */}
 
               {/* User Icon */}
-              <Link href="/login">
+              {/* <Link href="/login">
                 <Button variant="ghost" size="icon" className="text-black">
                   <User className="h-5 w-5" />
                 </Button>
-              </Link>
+              </Link> */}
 
               {/* Cart Icon */}
               {/* <Button
