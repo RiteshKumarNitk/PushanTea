@@ -1,5 +1,5 @@
 import Header from "@/components/Header"
-import  Contact  from "@/components/contact"
+import Contact from "@/components/Contact"
 import { Footer } from "@/components/footer"
 
 export default function GalleryPage() {
