@@ -78,7 +78,7 @@ export function AboutContent() {
               viewport={{ once: true }}
             >
               <img
-                src="/bala-sarda-PUSHAAN-founder-portrait.jpg"
+                src="/bala-sarda-vahdam-founder-portrait.jpg"
                 alt="Bala Sarda - Founder of PUSHAAN"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
