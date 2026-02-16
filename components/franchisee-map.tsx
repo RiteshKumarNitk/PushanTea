@@ -1,26 +1,24 @@
 "use client"
 
 import React, { useEffect, useState, useMemo } from "react"
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet"
+import { MapContainer, TileLayer, Marker, Popup, useMap, GeoJSON } from "react-leaflet"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { Search, MapPin, Navigation, Phone, Info, Crosshair, Plus, Minus, RefreshCcw } from 'lucide-react'
+import rajasthanData from './data/rajasthan.json'
 
-// --- Extended Franchisee Data ---
+// --- Extended Franchisee Data (Filtered for Rajasthan) ---
 const franchiseeData = [
-  { id: 1, name: "Pushaan Tea Delhi Central", city: "New Delhi", state: "Delhi", lat: 28.6139, lng: 77.209, address: "Block A, Connaught Place, New Delhi 110001", phone: "+91 98765 43210", outlets: 12 },
-  { id: 2, name: "Pushaan Tea Mumbai Hub", city: "Mumbai", state: "Maharashtra", lat: 19.076, lng: 72.8777, address: "Bandra West, Link Road, Mumbai 400050", phone: "+91 98765 43211", outlets: 18 },
   { id: 3, name: "Pushaan Tea Jaipur Flagship", city: "Jaipur", state: "Rajasthan", lat: 26.9124, lng: 75.7873, address: "MI Road, Pink City, Jaipur 302001", phone: "+91 98765 43212", outlets: 25 },
-  { id: 4, name: "Pushaan Tea Bengaluru Garden", city: "Bengaluru", state: "Karnataka", lat: 12.9716, lng: 77.5946, address: "Indiranagar 100ft Road, Bengaluru 560038", phone: "+91 98765 43213", outlets: 15 },
-  { id: 5, name: "Pushaan Tea Hyderabad Estate", city: "Hyderabad", state: "Telangana", lat: 17.385, lng: 78.4867, address: "Banjara Hills, Road No. 1, Hyderabad 500034", phone: "+91 98765 43214", outlets: 10 },
-  { id: 6, name: "Pushaan Tea Chennai Port", city: "Chennai", state: "Tamil Nadu", lat: 13.0827, lng: 80.2707, address: "Anna Salai, Mount Road, Chennai 600002", phone: "+91 98765 43215", outlets: 8 },
-  { id: 7, name: "Pushaan Tea Kolkata Heritage", city: "K कोलकाता", state: "West Bengal", lat: 22.5726, lng: 88.3639, address: "Park Street, Near Flurys, Kolkata 700016", phone: "+91 98765 43216", outlets: 14 },
   { id: 8, name: "Pushaan Tea Udaipur Lakeview", city: "Udaipur", state: "Rajasthan", lat: 24.5854, lng: 73.7125, address: "Hanuman Ghat, Lake Side, Udaipur 313001", phone: "+91 98765 43217", outlets: 22 },
-  { id: 9, name: "Pushaan Tea Ahmedabad Business", city: "Ahmedabad", state: "Gujarat", lat: 23.0225, lng: 72.5714, address: "C.G. Road, Navrangpura, Ahmedabad 380009", phone: "+91 98765 43218", outlets: 16 },
-  { id: 10, name: "Pushaan Tea Pune Cultural", city: "Pune", state: "Maharashtra", lat: 18.5204, lng: 73.8567, address: "F.C. Road, Deccan Gymkhana, Pune 411004", phone: "+91 98765 43219", outlets: 20 },
+  { id: 11, name: "Pushaan Tea Jodhpur Sun City", city: "Jodhpur", state: "Rajasthan", lat: 26.2389, lng: 73.0243, address: "Near Clock Tower, Jodhpur 342001", phone: "+91 98765 43220", outlets: 15 },
+  { id: 12, name: "Pushaan Tea Kota Riverfront", city: "Kota", state: "Rajasthan", lat: 25.2138, lng: 75.8648, address: "Chambal Garden Road, Kota 324001", phone: "+91 98765 43221", outlets: 12 },
+  { id: 13, name: "Pushaan Tea Ajmer Sharif", city: "Ajmer", state: "Rajasthan", lat: 26.4499, lng: 74.6399, address: "Dargah Bazar, Ajmer 305001", phone: "+91 98765 43222", outlets: 10 },
+  { id: 14, name: "Pushaan Tea Bikaner Heritage", city: "Bikaner", state: "Rajasthan", lat: 28.0229, lng: 73.3119, address: "Junagarh Fort Road, Bikaner 334001", phone: "+91 98765 43223", outlets: 9 },
+  { id: 15, name: "Pushaan Tea Alwar Fort", city: "Alwar", state: "Rajasthan", lat: 27.5530, lng: 76.6346, address: "Company Bagh, Alwar 301001", phone: "+91 98765 43224", outlets: 8 },
 ]
 
-const INDIA_CENTER: [number, number] = [20.5937, 78.9629]
+const RAJASTHAN_CENTER: [number, number] = [26.5, 73.8]
 
 // Internal component to handle map actions and UI overlays
 function MapUI({
@@ -44,7 +42,7 @@ function MapUI({
 
   const handleReset = (e: React.MouseEvent) => {
     e.stopPropagation()
-    map.flyTo(INDIA_CENTER, 5, { duration: 1.5 })
+    map.flyTo(RAJASTHAN_CENTER, 7, { duration: 1.5 })
   }
 
   return (
@@ -56,8 +54,8 @@ function MapUI({
               <MapPin size={18} />
             </div>
             <div>
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">Total Network</p>
-              <p className="text-xl font-black text-[#00492C]">150+ <span className="text-xs font-normal text-gray-500">Outlets</span></p>
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">Rajasthan Network</p>
+              <p className="text-xl font-black text-[#00492C]">100+ <span className="text-xs font-normal text-gray-500">Outlets</span></p>
             </div>
           </div>
         </div>
@@ -68,8 +66,8 @@ function MapUI({
               <Info size={18} />
             </div>
             <div>
-              <p className="text-[10px] font-bold text-green-200/50 uppercase tracking-tighter">Impact States</p>
-              <p className="text-xl font-black text-white">12+ <span className="text-xs font-normal text-green-200/60">Pan India</span></p>
+              <p className="text-[10px] font-bold text-green-200/50 uppercase tracking-tighter">Impact Districts</p>
+              <p className="text-xl font-black text-white">25+ <span className="text-xs font-normal text-green-200/60">Across State</span></p>
             </div>
           </div>
         </div>
@@ -193,11 +191,20 @@ export default function FranchiseeMap() {
     setSearchQuery("")
   }
 
+  const geoJsonStyle = {
+    fillColor: "#00492C",
+    weight: 2,
+    opacity: 1,
+    color: '#00492C',
+    dashArray: '3',
+    fillOpacity: 0.05
+  };
+
   if (!mounted || !icon) {
     return (
       <div className="w-full h-full bg-gray-50 flex flex-col items-center justify-center rounded-3xl border-2 border-dashed border-gray-200">
         <div className="w-8 h-8 border-4 border-green-800 border-t-transparent rounded-full animate-spin mb-4"></div>
-        <p className="text-gray-400 font-medium tracking-wide">INITIALIZING GLOBAL NETWORK...</p>
+        <p className="text-gray-400 font-medium tracking-wide">INITIALIZING RAJASTHAN NETWORK...</p>
       </div>
     )
   }
@@ -206,8 +213,8 @@ export default function FranchiseeMap() {
     <div className="w-full h-full relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
 
       <MapContainer
-        center={INDIA_CENTER}
-        zoom={5}
+        center={RAJASTHAN_CENTER}
+        zoom={6}
         scrollWheelZoom={false}
         className="w-full h-full z-0"
         style={{ height: "100%", width: "100%", background: "#f0f2f5" }}
@@ -225,6 +232,9 @@ export default function FranchiseeMap() {
           attribution='&copy; <a href="https://carto.com/" target="_blank">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
+
+        {/* @ts-ignore */}
+        <GeoJSON data={rajasthanData} style={geoJsonStyle} />
 
         {franchiseeData.map((location) => (
           <Marker
