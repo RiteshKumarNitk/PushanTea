@@ -47,6 +47,16 @@ function MapUI({
 
   return (
     <>
+      {/* Central Heading */}
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-[1000] hidden lg:block select-none pointer-events-none">
+        <div className="bg-white/95 backdrop-blur-md px-6 py-2.5 rounded-2xl shadow-xl border border-green-100/50 flex items-center gap-3">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#00492C] animate-pulse"></div>
+          <h2 className="text-[#00492C] font-black text-sm tracking-widest uppercase">
+            All our dealers are within Rajasthan
+          </h2>
+        </div>
+      </div>
+
       <div className="absolute top-6 left-6 z-[1000] space-y-3 pointer-events-none md:pointer-events-auto select-none">
         <div className="bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/20 transform transition-all duration-300 hover:scale-105">
           <div className="flex items-center gap-3 mb-1">
